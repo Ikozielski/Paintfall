@@ -1,3 +1,7 @@
 pegaImput();
+checaChao();
 movimentacao();
+ativaDebug();
+
+
 

@@ -1,0 +1,9 @@
+Iniciando o projeto dia 16/03/2026
+
+Aplicar a gravidade no player
+
+Ver as informações de DEBUG - 
+dbg_watch(ref_create(id, "velocidadeVertical"), "VelocidadeVertical"); 
+Primeiras aspas é a variavel, e segundo é o nome pra aparecer no DEBUG
+ 
+Poder mudar a gravidade usando o dbg_slider

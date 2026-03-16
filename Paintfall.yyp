@@ -38,9 +38,11 @@
   },
   "name":"Paintfall",
   "resources":[
+    {"id":{"name":"Anotações e Atividades","path":"notes/Anotações e Atividades/Anotações e Atividades.yy",},},
     {"id":{"name":"obj_parede","path":"objects/obj_parede/obj_parede.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"scr_globais","path":"scripts/scr_globais/scr_globais.yy",},},
     {"id":{"name":"spr_background","path":"sprites/spr_background/spr_background.yy",},},
     {"id":{"name":"spr_parede","path":"sprites/spr_parede/spr_parede.yy",},},
     {"id":{"name":"spr_player_idle","path":"sprites/spr_player_idle/spr_player_idle.yy",},},

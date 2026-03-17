@@ -69,12 +69,18 @@ pegaImput = function (){
 
 #region Funções de estado
 
+acabou_animacao = function (){
+    var _speed = sprite_get_speed(sprite_index) / FPS
+    if(image_index + _speed >= image_number){
+        return true;
+    }
+}
+
 troca_sprite = function (_sprite = spr_parede){
     if(sprite_index != _sprite){
       sprite_index = _sprite;
       image_index = 0;   
     }
-    
 }
 
 estado_parado = function (){
@@ -115,15 +121,21 @@ estado_pulando = function (){
 }
 
 estado_powerUp_inicio = function (){
+    
     troca_sprite(spr_player_powerUp_inicio);
+    
+    if(acabou_animacao()) estado = estado_powerUp_meio;
+    
 }
 
 estado_powerUp_meio = function (){
     troca_sprite(spr_player_powerUp_meio);
+    if(acabou_animacao()) estado = estado_powerUp_fim;
 }
 
 estado_powerUp_fim = function (){
     troca_sprite(spr_player_powerUp_fim);
+    if(acabou_animacao()) estado = estado_parado;
 }
 
 
@@ -176,4 +188,4 @@ ativaDebug = function (){
 
 
 //Final do Create
-estado = estado_parado;
+estado = estado_powerUp_inicio;

@@ -1,7 +1,10 @@
 pegaImput();
 checaChao();
-movimentacao();
 ativaDebug();
+movimento();
+estado();
+
+
 
 
 

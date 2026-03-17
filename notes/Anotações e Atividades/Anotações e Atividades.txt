@@ -7,3 +7,11 @@ dbg_watch(ref_create(id, "velocidadeVertical"), "VelocidadeVertical");
 Primeiras aspas é a variavel, e segundo é o nome pra aparecer no DEBUG
  
 Poder mudar a gravidade usando o dbg_slider
+
+Criar o estado de movendo - Cor Azul 
+Criar o estado de pulo    - Cor Amarelo 
+
+Se eu apertar pra andar, muda o estado para movendo
+
+Fazer um metodo pra trocar a sprite e resetar a animação
+ao iniciar 

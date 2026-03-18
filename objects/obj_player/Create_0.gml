@@ -15,6 +15,8 @@ chao = 0;
 //Varaveis de Estado
 estado = noone;
 
+inicia_efeito_squash();
+
 
 #endregion
 
@@ -112,6 +114,7 @@ estado_parado = function (){
     if(jump) {
         estado = estado_pulando; 
         criaParticulasProfundidade(x, y, depth - 1, obj_particula_pulo);
+        efeito_squash(.4, 1.6);
     }
 }
 
@@ -148,6 +151,7 @@ estado_pulando = function (){
     if (chao){
        estado = estado_parado;
        criaParticulasProfundidade(x, y, depth - 1, obj_particula_pouso); 
+        efeito_squash(1, .5);
     }
 }
 

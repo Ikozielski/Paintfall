@@ -1,0 +1,13 @@
+Objeto que vai ter o efeito (não é o obj_screenShake):
+
+Create
+inicia_efeito_squash();
+
+Step
+retorna_efeito_squash();
+
+Draw
+desenha_efeito_squash();
+
+Aí aonde quiser usar o efeito -- Passando como parametro a dilatação da sprite base: (1, 1)
+efeito_squash()

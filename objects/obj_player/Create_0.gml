@@ -6,11 +6,15 @@ velocidadeVertical          = 0;
 velocidadeVerticalMaxima    = 4;
 gravidade                   = .2;
 
+//Direcao que estou olhando 
+direcao = 1;
+
 //Variaveis de Imput
 direita = 0;
 esquerda = 0;
 jump = 0; 
 chao = 0;
+poder = 0;
 
 //Varaveis de Estado
 estado = noone;
@@ -69,6 +73,7 @@ pegaImput = function (){
     direita = keyboard_check(vk_right); 
     esquerda = keyboard_check(vk_left);
     jump = keyboard_check_pressed(vk_space);
+    poder = keyboard_check_pressed(ord("Z"));
 }
 
 criaParticulasProfundidade = function (_x, _y, _profundidade, _objeto){
@@ -78,7 +83,7 @@ criaParticulasProfundidade = function (_x, _y, _profundidade, _objeto){
 ajusta_escala = function (){ 
     //Se minha velocidade Horizontal for diferente de 0, ele vai colocar o sinal (+ ou -) no imagem xscale, pra 
     //saber o lado de virar a sprite 
-   if (velocidadeHorizontal != 0) image_xscale = sign(velocidadeHorizontal);
+   if (velocidadeHorizontal != 0) direcao = sign(velocidadeHorizontal);
 }
 
 #region Funções de estado
@@ -116,6 +121,12 @@ estado_parado = function (){
         criaParticulasProfundidade(x, y, depth - 1, obj_particula_pulo);
         efeito_squash(.4, 1.6);
     }
+    
+    //Quando eu apertar o botao de poder, eu entro na tinta 
+    if(poder){
+        estado = estado_tinta_entrar;
+    }
+    
 }
 
 estado_movendo = function (){
@@ -130,6 +141,10 @@ estado_movendo = function (){
     if(jump){ 
         estado = estado_pulando; 
         criaParticulasProfundidade(x, y, depth - 1, obj_particula_pulo);
+    }
+    
+    if(poder){
+        estado = estado_tinta_entrar;
     }
 }
 
@@ -173,12 +188,39 @@ estado_powerUp_fim = function (){
     if(acabou_animacao()) estado = estado_parado;
 }
 
-estado_tinta_entrar = function (){
-    troca_sprite(spr_player_tinta_entrar);
+
+estado_tinta_loop = function (){
+    troca_sprite(spr_player_tinta_loop);
+    aplicaVelocidade();
     
+    if(poder){
+        instance_create_depth(x, y, depth - 1, obJ_tinta_sair_particulas);
+        estado = estado_tinta_sair;
+    }
 }
 
+//Estado loop da tinta
+//Entrando no estado loop da tinta 
+estado_tinta_entrar = function (){
+    
+    velocidadeHorizontal = 0;
+    troca_sprite(spr_player_tinta_entrar);
+    
+     if (image_index == 0){ 
+        instance_create_depth(x, y, depth - 1, obj_tinta_entrar_particulas);
+    }
+    
+    if (acabou_animacao()) estado = estado_tinta_loop;
+        
+    
+   
+}
+
+//Quando eu clicar Z ele vai para o estado de sair da tinta 
+
 estado_tinta_sair = function (){
+    
+    velocidadeHorizontal = 0;
     troca_sprite(spr_player_tinta_sair);
     if(acabou_animacao()) estado = estado_parado;
 }

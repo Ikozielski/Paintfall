@@ -1,13 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_particula_pouso",
+  "%Name":"obj_tinta_entrar_particulas",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_particula_pouso",
+  "name":"obj_tinta_entrar_particulas",
   "overriddenProperties":[],
   "parent":{
     "name":"Particulas",
@@ -32,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_pouso_particulas",
-    "path":"sprites/spr_pouso_particulas/spr_pouso_particulas.yy",
+    "name":"spr_tinta_entrar_particula",
+    "path":"sprites/spr_tinta_entrar_particula/spr_tinta_entrar_particula.yy",
   },
   "spriteMaskId":null,
   "visible":true,

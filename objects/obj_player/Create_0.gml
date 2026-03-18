@@ -22,6 +22,8 @@ estado = noone;
 
 aplicaVelocidade  = function (){
     
+    checaChao();
+    
     //Aplicando Imputs na Velocidade Horizontal
     velocidadeHorizontal = (direita - esquerda) * velocidadeHorizontalMaxima;
     
@@ -64,7 +66,17 @@ pegaImput = function (){
     //Pegando Imputs
     direita = keyboard_check(vk_right); 
     esquerda = keyboard_check(vk_left);
-    jump = keyboard_check(vk_space);
+    jump = keyboard_check_pressed(vk_space);
+}
+
+criaParticulasProfundidade = function (_x, _y, _profundidade, _objeto){
+    instance_create_depth(_x, _y, _profundidade, _objeto);
+}
+
+ajusta_escala = function (){ 
+    //Se minha velocidade Horizontal for diferente de 0, ele vai colocar o sinal (+ ou -) no imagem xscale, pra 
+    //saber o lado de virar a sprite 
+   if (velocidadeHorizontal != 0) image_xscale = sign(velocidadeHorizontal);
 }
 
 #region Funções de estado
@@ -85,6 +97,10 @@ troca_sprite = function (_sprite = spr_parede){
 
 estado_parado = function (){
     
+    velocidadeHorizontal = 0;
+    velocidadeVertical = 0;
+    aplicaVelocidade();
+    
     troca_sprite(spr_player_idle);
     
     //Andei
@@ -93,7 +109,10 @@ estado_parado = function (){
     }
     
     //Pulei
-    if(jump) estado = estado_pulando;
+    if(jump) {
+        estado = estado_pulando; 
+        criaParticulasProfundidade(x, y, depth - 1, obj_particula_pulo);
+    }
 }
 
 estado_movendo = function (){
@@ -101,7 +120,14 @@ estado_movendo = function (){
     
     troca_sprite(spr_player_movendo);
     
-    if(velocidadeHorizontal == 0) estado = estado_parado;
+    if(velocidadeHorizontal == 0) {
+        estado = estado_parado;
+    }
+    
+    if(jump){ 
+        estado = estado_pulando; 
+        criaParticulasProfundidade(x, y, depth - 1, obj_particula_pulo);
+    }
 }
 
 estado_pulando = function (){
@@ -110,6 +136,8 @@ estado_pulando = function (){
     
     //Como sei que vou usar a sprite do pulo pra cima
     //Como sei que vou usar a sprite do pulo pra baixo
+    
+    
     if (velocidadeVertical < 0){
         troca_sprite(spr_player_pulo_cima);
     } else {
@@ -117,7 +145,10 @@ estado_pulando = function (){
       }
     
     //Como sei que voltei pro estado parado?
-    if (chao) estado = estado_parado;
+    if (chao){
+       estado = estado_parado;
+       criaParticulasProfundidade(x, y, depth - 1, obj_particula_pouso); 
+    }
 }
 
 estado_powerUp_inicio = function (){
@@ -138,6 +169,15 @@ estado_powerUp_fim = function (){
     if(acabou_animacao()) estado = estado_parado;
 }
 
+estado_tinta_entrar = function (){
+    troca_sprite(spr_player_tinta_entrar);
+    
+}
+
+estado_tinta_sair = function (){
+    troca_sprite(spr_player_tinta_sair);
+    if(acabou_animacao()) estado = estado_parado;
+}
 
 
 #endregion
@@ -188,4 +228,4 @@ ativaDebug = function (){
 
 
 //Final do Create
-estado = estado_powerUp_inicio;
+estado = estado_parado;

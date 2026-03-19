@@ -9,6 +9,11 @@ gravidade                   = .2;
 //Direcao que estou olhando 
 direcao = 1;
 
+//Variáveis com a minha lista de colisões
+//Pegar a layer do tilemap pra fazer a colisao
+var _layer = layer_tilemap_get_id("tl_level");
+colisoes = [obj_parede, _layer];
+
 //Variaveis de Imput
 direita = 0;
 esquerda = 0;
@@ -41,8 +46,8 @@ aplicaVelocidade  = function (){
 
 movimento = function (){
     //Aplicando Velocidade no X
-    move_and_collide(velocidadeHorizontal, 0, obj_parede, 4);
-    move_and_collide(0, velocidadeVertical, obj_parede, 12);
+    move_and_collide(velocidadeHorizontal, 0, colisoes, 4);
+    move_and_collide(0, velocidadeVertical, colisoes, 12);
 }
 
 
@@ -57,15 +62,19 @@ aplicaGravidade = function (){
     if(!chao){ 
         velocidadeVertical += gravidade;
     } else{
-        y = round(y);
         velocidadeVertical = 0;
+        y = round(y);
+        
     }
+    
+    //Limitando a velocidade vertical do player 
+    velocidadeVertical = clamp(velocidadeVertical, -velocidadeVerticalMaxima, velocidadeVerticalMaxima);
     
 }
 checaChao = function (){
-    chao = place_meeting(x, y + 1, obj_parede);
-    
+    chao = place_meeting(x, y + 1, colisoes);
 }
+
 
 pegaImput = function (){
     
@@ -105,7 +114,6 @@ troca_sprite = function (_sprite = spr_parede){
 estado_parado = function (){
     
     velocidadeHorizontal = 0;
-    velocidadeVertical = 0;
     aplicaVelocidade();
     
     troca_sprite(spr_player_idle);
@@ -138,10 +146,13 @@ estado_movendo = function (){
         estado = estado_parado;
     }
     
+        
     if(jump){ 
         estado = estado_pulando; 
         criaParticulasProfundidade(x, y, depth - 1, obj_particula_pulo);
     }
+    
+    if(!chao) estado = estado_pulando;
     
     if(poder){
         estado = estado_tinta_entrar;
@@ -192,6 +203,12 @@ estado_powerUp_fim = function (){
 estado_tinta_loop = function (){
     troca_sprite(spr_player_tinta_loop);
     aplicaVelocidade();
+    
+    //Se na minha frente e embaixo de mim nao tiver chão, eu zero meu velh
+    var _parar = !place_meeting(x + (velocidadeHorizontal * 10), y + 1, colisoes);
+    if(_parar){
+        velocidadeHorizontal = 0;
+    }
     
     if(poder){
         instance_create_depth(x, y, depth - 1, obJ_tinta_sair_particulas);

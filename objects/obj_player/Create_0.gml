@@ -12,7 +12,8 @@ direcao = 1;
 //Variáveis com a minha lista de colisões
 //Pegar a layer do tilemap pra fazer a colisao
 var _layer = layer_tilemap_get_id("tl_level");
-colisoes = [obj_parede, _layer];
+var _layer_plataformas = layer_get_id("Plataformas");
+colisoes = [obj_parede, _layer, _layer_plataformas];
 
 //Variaveis de Imput
 direita = 0;
@@ -81,8 +82,8 @@ pegaImput = function (){
     //Pegando Imputs
     direita = keyboard_check(vk_right); 
     esquerda = keyboard_check(vk_left);
-    jump = keyboard_check_pressed(vk_space);
-    poder = keyboard_check_pressed(ord("Z"));
+    jump = keyboard_check_pressed(vk_up);
+    poder = keyboard_check_pressed(vk_space);
 }
 
 criaParticulasProfundidade = function (_x, _y, _profundidade, _objeto){

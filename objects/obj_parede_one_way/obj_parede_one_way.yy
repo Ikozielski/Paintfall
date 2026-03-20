@@ -1,18 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_plataforma_menor",
-  "eventList":[],
+  "%Name":"obj_parede_one_way",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_plataforma_menor",
+  "name":"obj_parede_one_way",
   "overriddenProperties":[],
   "parent":{
-    "name":"Plataformas",
-    "path":"folders/Objects/Level/Plataformas.yy",
+    "name":"Level",
+    "path":"folders/Objects/Level.yy",
   },
-  "parentObjectId":{
-    "name":"obj_parede_one_way",
-    "path":"objects/obj_parede_one_way/obj_parede_one_way.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_plataforma_menor",
-    "path":"sprites/spr_plataforma_menor/spr_plataforma_menor.yy",
+    "name":"spr_parede",
+    "path":"sprites/spr_parede/spr_parede.yy",
   },
   "spriteMaskId":null,
   "visible":true,

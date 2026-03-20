@@ -12,8 +12,8 @@ direcao = 1;
 //Variáveis com a minha lista de colisões
 //Pegar a layer do tilemap pra fazer a colisao
 var _layer = layer_tilemap_get_id("tl_level");
-var _layer_plataformas = layer_get_id("Plataformas");
-colisoes = [obj_parede, _layer, _layer_plataformas];
+
+colisoes = [obj_parede, _layer];
 
 //Variaveis de Imput
 direita = 0;
@@ -168,10 +168,30 @@ estado_pulando = function (){
     //Como sei que vou usar a sprite do pulo pra baixo
     
     
+    //colisoes[2] = obj_parede_one_way;
     if (velocidadeVertical < 0){
         troca_sprite(spr_player_pulo_cima);
-    } else {
+        //Removendo a One Way da lista de colisoes 
+        
+        if (array_contains(colisoes, obj_parede_one_way)){
+             var _indice = array_get_index(colisoes, obj_parede_one_way);
+             array_delete(colisoes, _indice, 1);
+        }
+        //Funciona nesse caso, mas da ruim se o que eu quero deletar nao for a ultima posicao do array
+        //if (array_contains(colisoes, obj_parede_one_way)) array_pop(colisoes);
+            
+        //colisoes[2] = obj_parede;
+        
+    } else { // Estou Caindo, velocidadeVertical é positiva
         troca_sprite(spr_player_pulo_baixo);
+        //Se não estou tocando na parede one way
+        //Preciso checar que NÃO estou colidindo com a parede one way
+        if (!place_meeting(x, y, obj_parede_one_way)){
+            
+            if (!array_contains(colisoes, obj_parede_one_way)) array_push(colisoes, obj_parede_one_way);
+            //Fazendo a mesma coisa com o push
+            //colisoes[2] = obj_parede_one_way;
+        } 
       }
     
     //Como sei que voltei pro estado parado?

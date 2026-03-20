@@ -1,18 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_player",
+  "%Name":"obj_powerup",
   "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_powerup","path":"objects/obj_powerup/obj_powerup.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_player",
+  "name":"obj_powerup",
   "overriddenProperties":[],
   "parent":{
-    "name":"Player",
-    "path":"folders/Objects/Player.yy",
+    "name":"PowerUps",
+    "path":"folders/Objects/Level/PowerUps.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -33,12 +32,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_player_idle",
-    "path":"sprites/spr_player_idle/spr_player_idle.yy",
+    "name":"spr_powerUp",
+    "path":"sprites/spr_powerUp/spr_powerUp.yy",
   },
-  "spriteMaskId":{
-    "name":"spr_player_idle",
-    "path":"sprites/spr_player_idle/spr_player_idle.yy",
-  },
+  "spriteMaskId":null,
   "visible":true,
 }

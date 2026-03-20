@@ -96,6 +96,12 @@ ajusta_escala = function (){
    if (velocidadeHorizontal != 0) direcao = sign(velocidadeHorizontal);
 }
 
+pega_powerUp = function (){
+   
+    estado = estado_powerUp_inicio;
+    //if(acabou_animacao()) other.instance_destroy();
+}
+
 #region Funções de estado
 
 acabou_animacao = function (){
@@ -202,9 +208,12 @@ estado_pulando = function (){
     }
 }
 
+
 estado_powerUp_inicio = function (){
     
     troca_sprite(spr_player_powerUp_inicio);
+    
+    velocidadeHorizontal = 0;
     
     if(acabou_animacao()) estado = estado_powerUp_meio;
     
@@ -217,7 +226,9 @@ estado_powerUp_meio = function (){
 
 estado_powerUp_fim = function (){
     troca_sprite(spr_player_powerUp_fim);
-    if(acabou_animacao()) estado = estado_parado;
+    if(acabou_animacao()){
+       estado = estado_parado; 
+    } 
 }
 
 

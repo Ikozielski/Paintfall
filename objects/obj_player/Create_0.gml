@@ -13,6 +13,8 @@ direcao = 1;
 //Pegar a layer do tilemap pra fazer a colisao
 var _layer = layer_tilemap_get_id("tl_level");
 
+tileTinta = layer_tilemap_get_id("tl_tinta");
+
 colisoes = [obj_parede, _layer];
 
 //Variaveis de Imput
@@ -74,6 +76,8 @@ aplicaGravidade = function (){
 }
 checaChao = function (){
     chao = place_meeting(x, y + 1, colisoes);
+    
+    chaoTinta = place_meeting(x, y + 1, tileTinta)
 }
 
 
@@ -138,7 +142,8 @@ estado_parado = function (){
     }
     
     //Quando eu apertar o botao de poder, eu entro na tinta 
-    if(poder){
+    //Se eu estou no TileMap da tinta eu entro na tinta
+    if(poder && global.pegueiPowerUp && chaoTinta){
         estado = estado_tinta_entrar;
     }
     
@@ -161,7 +166,8 @@ estado_movendo = function (){
     
     if(!chao) estado = estado_pulando;
     
-    if(poder){
+    
+    if(poder && global.pegueiPowerUp && chaoTinta){
         estado = estado_tinta_entrar;
     }
 }
@@ -215,13 +221,17 @@ estado_powerUp_inicio = function (){
     
     velocidadeHorizontal = 0;
     
+    global.pegueiPowerUp = true;
+    
     if(acabou_animacao()) estado = estado_powerUp_meio;
     
 }
 
 estado_powerUp_meio = function (){
     troca_sprite(spr_player_powerUp_meio);
-    if(acabou_animacao()) estado = estado_powerUp_fim;
+    //if(acabou_animacao()) estado = estado_powerUp_fim;
+    //Só vai para o PowerUp fim se não existir mais particulas do power up 
+    if(!instance_exists(obj_particula_powerUp)) estado = estado_powerUp_fim;
 }
 
 estado_powerUp_fim = function (){
@@ -234,10 +244,12 @@ estado_powerUp_fim = function (){
 
 estado_tinta_loop = function (){
     troca_sprite(spr_player_tinta_loop);
+    
+    
     aplicaVelocidade();
     
     //Se na minha frente e embaixo de mim nao tiver chão, eu zero meu velh
-    var _parar = !place_meeting(x + (velocidadeHorizontal * 10), y + 1, colisoes);
+    var _parar = !place_meeting(x + (velocidadeHorizontal * 10), y + 1, tileTinta);
     if(_parar){
         velocidadeHorizontal = 0;
     }

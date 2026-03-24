@@ -2,6 +2,11 @@
 
 if(!alvo) exit;
     
+image_xscale = lerp(image_xscale, speed * 3, .1);
+image_angle = direction;
+
+    
+
 if (!voltar){
     speed -= .05;
     if(speed <= 0) {
@@ -24,8 +29,8 @@ if (!voltar){
     if (_player) {
         
         with (_player) {
-            var _xscale = random_range(.1, .3); 
-            var _yscale = random_range(.1, .3);
+            var _xscale = random_range(-.3, .3); 
+            var _yscale = random_range(-.3, .3);
             efeito_squash(1 + _xscale, 1 + _yscale);
         }
         instance_destroy();

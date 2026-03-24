@@ -21,7 +21,7 @@ if (!voltar){
     }
 } else {
     
-    speed += .05;
+    speed += .15;
     
     //Se eu colidi com o player, eu me destruo 
     var _player = instance_place(x, y, obj_player);
@@ -33,6 +33,9 @@ if (!voltar){
             var _yscale = random_range(-.3, .3);
             efeito_squash(1 + _xscale, 1 + _yscale);
         }
+        
+        //Crio uma screenshake 
+        ScreenShake(2);
         instance_destroy();
     }
  }

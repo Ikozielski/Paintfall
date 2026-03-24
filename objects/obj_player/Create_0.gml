@@ -53,8 +53,6 @@ movimento = function (){
     move_and_collide(0, velocidadeVertical, colisoes, 12);
 }
 
-
-
 puloPlayer = function (){
     if (chao && jump) velocidadeVertical = -velocidadeVerticalMaxima; 
 }
@@ -67,7 +65,6 @@ aplicaGravidade = function (){
     } else{
         velocidadeVertical = 0;
         y = round(y);
-        
     }
     
     //Limitando a velocidade vertical do player 
@@ -79,7 +76,6 @@ checaChao = function (){
     
     chaoTinta = place_meeting(x, y + 1, tileTinta)
 }
-
 
 pegaImput = function (){
     
@@ -110,6 +106,7 @@ pega_powerUp = function (){
 
 acabou_animacao = function (){
     var _speed = sprite_get_speed(sprite_index) / FPS
+    
     if(image_index + _speed >= image_number){
         return true;
     }
@@ -158,14 +155,12 @@ estado_movendo = function (){
         estado = estado_parado;
     }
     
-        
     if(jump){ 
         estado = estado_pulando; 
         criaParticulasProfundidade(x, y, depth - 1, obj_particula_pulo);
     }
     
     if(!chao) estado = estado_pulando;
-    
     
     if(poder && global.pegueiPowerUp && chaoTinta){
         estado = estado_tinta_entrar;
@@ -191,7 +186,7 @@ estado_pulando = function (){
         }
         //Funciona nesse caso, mas da ruim se o que eu quero deletar nao for a ultima posicao do array
         //if (array_contains(colisoes, obj_parede_one_way)) array_pop(colisoes);
-            
+        
         //colisoes[2] = obj_parede;
         
     } else { // Estou Caindo, velocidadeVertical é positiva
@@ -213,7 +208,6 @@ estado_pulando = function (){
         efeito_squash(1, .5);
     }
 }
-
 
 estado_powerUp_inicio = function (){
     
@@ -241,12 +235,12 @@ estado_powerUp_fim = function (){
     } 
 }
 
-
 estado_tinta_loop = function (){
     troca_sprite(spr_player_tinta_loop);
     
-    
     aplicaVelocidade();
+    
+    mask_index = spr_player_tinta_loop;
     
     //Se na minha frente e embaixo de mim nao tiver chão, eu zero meu velh
     var _parar = !place_meeting(x + (velocidadeHorizontal * 10), y + 1, tileTinta);
@@ -273,8 +267,6 @@ estado_tinta_entrar = function (){
     
     if (acabou_animacao()) estado = estado_tinta_loop;
         
-    
-   
 }
 
 //Quando eu clicar Z ele vai para o estado de sair da tinta 
@@ -283,13 +275,11 @@ estado_tinta_sair = function (){
     
     velocidadeHorizontal = 0;
     troca_sprite(spr_player_tinta_sair);
+    mask_index = spr_player_idle;
     if(acabou_animacao()) estado = estado_parado;
 }
 
-
 #endregion
-
-
 
 #region debug
 
@@ -332,7 +322,6 @@ ativaDebug = function (){
 #endregion
 
 #endregion
-
 
 //Final do Create
 estado = estado_parado;

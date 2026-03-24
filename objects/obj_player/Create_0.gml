@@ -113,6 +113,7 @@ acabou_animacao = function (){
 }
 
 troca_sprite = function (_sprite = spr_parede){
+    
     if(sprite_index != _sprite){
       sprite_index = _sprite;
       image_index = 0;   
@@ -242,6 +243,10 @@ estado_tinta_loop = function (){
     
     mask_index = spr_player_tinta_loop;
     
+     //var _obstaculoCima = place_meeting(x, y - 10, colisoes); 
+    var _obstaculoCima = collision_rectangle (bbox_left, bbox_top - 20, bbox_right, bbox_top, colisoes, false, true);
+    
+    
     //Se na minha frente e embaixo de mim nao tiver chão, eu zero meu velh
     var _parar = !place_meeting(x + (velocidadeHorizontal * 10), y + 1, tileTinta);
     if(_parar){
@@ -249,6 +254,7 @@ estado_tinta_loop = function (){
     }
     
     if(poder){
+        if (_obstaculoCima) exit;
         instance_create_depth(x, y, depth - 1, obJ_tinta_sair_particulas);
         estado = estado_tinta_sair;
     }
@@ -266,17 +272,19 @@ estado_tinta_entrar = function (){
     }
     
     if (acabou_animacao()) estado = estado_tinta_loop;
-        
+
 }
 
 //Quando eu clicar Z ele vai para o estado de sair da tinta 
 
 estado_tinta_sair = function (){
     
+    
     velocidadeHorizontal = 0;
     troca_sprite(spr_player_tinta_sair);
     mask_index = spr_player_idle;
-    if(acabou_animacao()) estado = estado_parado;
+    if(acabou_animacao()) estado = estado_parado; 
+    
 }
 
 #endregion

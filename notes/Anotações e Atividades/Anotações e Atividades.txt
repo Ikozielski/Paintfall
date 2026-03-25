@@ -15,3 +15,22 @@ Se eu apertar pra andar, muda o estado para movendo
 
 Fazer um metodo pra trocar a sprite e resetar a animação
 ao iniciar 
+
+
+-- Atividade
+
+Player vai colidir com a porta, ela vai bloquear o caminho do jogador - OK
+
+O player vai precisar pegar a chave  - OK
+    Importar a sprite da chave girando
+    Criar o Objeto da chave
+    
+Fazer o player ter um contador de chave - OK
+
+Quando o player pegar a chave, ela se destrói e aumenta o contade de chaves em 1 - OK
+
+Se o player tiver ao menos uma chave E ele colidir com a porta, a porta se destrói (sem efeito) - OK
+
+
+
+

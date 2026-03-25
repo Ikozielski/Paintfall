@@ -9,8 +9,8 @@
   "name":"obj_parede_one_way",
   "overriddenProperties":[],
   "parent":{
-    "name":"Level",
-    "path":"folders/Objects/Level.yy",
+    "name":"Colisoes",
+    "path":"folders/Objects/Level/Colisoes.yy",
   },
   "parentObjectId":null,
   "persistent":false,

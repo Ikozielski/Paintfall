@@ -102,6 +102,19 @@ pega_powerUp = function (){
     //if(acabou_animacao()) other.instance_destroy();
 }
 
+passaPorta = function (){
+    //Preciso checar se a porta esta no estado de fechada, pra poder fazer isso :
+    var porta = instance_place(x + velocidadeHorizontal, y, obj_porta);
+    
+    if(global.chaves > 0 && porta && porta.estado == porta.estado_fechada){  
+        
+        global.chaves -= 1;
+        porta.estado = porta.estado_abrindo;
+        //Não vai destruir mais a porta, e sim mandar ela para o estado "abrindo"
+        //instance_destroy(obj_porta.id);
+    }
+}
+
 #region Funções de estado
 
 acabou_animacao = function (){
@@ -286,6 +299,7 @@ estado_tinta_sair = function (){
     if(acabou_animacao()) estado = estado_parado; 
     
 }
+
 
 #endregion
 

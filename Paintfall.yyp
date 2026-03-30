@@ -61,7 +61,7 @@
     {"name":"foguinho vermelho","path":"particlelib/foguinho vermelho/foguinho vermelho.yy",},
   ],
   "MetaData":{
-    "IDEVersion":"2024.14.3.217",
+    "IDEVersion":"2024.14.4.221",
   },
   "name":"Paintfall",
   "resources":[
@@ -88,6 +88,7 @@
     {"id":{"name":"obJ_tinta_sair_particulas","path":"objects/obJ_tinta_sair_particulas/obJ_tinta_sair_particulas.yy",},},
     {"id":{"name":"obj_tocha","path":"objects/obj_tocha/obj_tocha.yy",},},
     {"id":{"name":"ps_brilho_chamas","path":"particles/ps_brilho_chamas/ps_brilho_chamas.yy",},},
+    {"id":{"name":"ps_porta_subindo","path":"particles/ps_porta_subindo/ps_porta_subindo.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"scr_globais","path":"scripts/scr_globais/scr_globais.yy",},},
     {"id":{"name":"scr_macros","path":"scripts/scr_macros/scr_macros.yy",},},

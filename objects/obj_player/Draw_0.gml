@@ -1,9 +1,7 @@
 //draw_self();
 draw_sprite_ext(sprite_index, image_index, x, y, xscale * direcao, yscale, image_angle, image_blend, image_alpha);
 
-shader_set(sh_muda_cor);
-draw_sprite_ext(sprite_index, image_index, x, y, xscale * direcao, yscale, image_angle, cor_brilho, alpha_brilho);
-shader_reset();
+desenha_efeito_brilho();
 
 draw_text(x, y, chaoTinta);
 

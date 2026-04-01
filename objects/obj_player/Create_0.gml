@@ -1,10 +1,20 @@
+//Iniciando as coisas
+inicia_efeito_squash();
+inicia_efeito_brilho();
+
 #region Variaveis
+
 
 velocidadeHorizontal        = 0;
 velocidadeHorizontalMaxima  = 1.5;
 velocidadeVertical          = 0;
 velocidadeVerticalMaxima    = 4;
 gravidade                   = .2;
+
+
+////Variaveis do Shaders
+//cor_brilho = c_white;
+//alpha_brilho = 0;
 
 //Direcao que estou olhando 
 direcao = 1;
@@ -27,7 +37,7 @@ poder = 0;
 //Varaveis de Estado
 estado = noone;
 
-inicia_efeito_squash();
+
 
 
 #endregion

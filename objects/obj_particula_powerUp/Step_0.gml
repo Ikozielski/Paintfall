@@ -4,6 +4,7 @@ if(!alvo) exit;
     
 image_xscale = lerp(image_xscale, speed * 3, .1);
 image_angle = direction;
+image_alpha = speed / 6;
 
     
 

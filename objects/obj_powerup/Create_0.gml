@@ -15,8 +15,9 @@ movendo = function (){
 
 //Explosão de particulas 
 explosao = function(){
-    //Criando 20 Particulas
-    repeat (20){
+    //Criando Particulas
+    var _quantidade = irandom_range(20, 30);
+    repeat (_quantidade){
         var _particulas = instance_create_layer(x, y, "Enfeites", obj_particula_powerUp);
         
         _particulas.direction = random_range(0, 359);

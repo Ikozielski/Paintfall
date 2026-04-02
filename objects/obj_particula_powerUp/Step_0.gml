@@ -33,6 +33,9 @@ if (!voltar){
             var _xscale = random_range(-.3, .3); 
             var _yscale = random_range(-.3, .3);
             efeito_squash(1 + _xscale, 1 + _yscale);
+            var _forca = random_range(.3, 1);
+            aplica_efeito_brilho(, _forca);
+            
         }
         
         //Crio uma screenshake 

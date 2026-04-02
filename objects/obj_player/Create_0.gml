@@ -238,6 +238,7 @@ estado_powerUp_inicio = function (){
     troca_sprite(spr_player_powerUp_inicio);
     
     velocidadeHorizontal = 0;
+    velocidadeVertical = 0;
     
     global.pegueiPowerUp = true;
     

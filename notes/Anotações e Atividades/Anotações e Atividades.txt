@@ -33,4 +33,27 @@ Se o player tiver ao menos uma chave E ele colidir com a porta, a porta se destr
 
 
 
+Arquitetura do DADO:
+
+Maquina de estado pra ele com 4 estados, 
+
+Parado pra pular (Setinha)
+Transição para o X
+Parado no X
+Transição pra pular (Setinha)
+----------------------------------------------------
+Parado pra pular (Setinha)
+    Ele vai ficar parado por 1 segundo, na imagem 0 da sprite
+    Depois de 1 segundo ele vai começar a transição para a imagem 8 da sprite 
+    Aí ele vai para o próximo estado
+
+Parado no X 
+    Aqui ele vai ficar parado por mais 1 segundo na imagem 8 da sprite 
+    Aí ele muda para o estado de transição para a seta 
+    Depois ele roda a transição e volta para o estado da setinha pra cima
+
+    
+
+
+
 

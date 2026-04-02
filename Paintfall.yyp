@@ -131,6 +131,7 @@
     {"id":{"name":"spr_tinta_entrar_particula","path":"sprites/spr_tinta_entrar_particula/spr_tinta_entrar_particula.yy",},},
     {"id":{"name":"spr_tinta_sair_particulas","path":"sprites/spr_tinta_sair_particulas/spr_tinta_sair_particulas.yy",},},
     {"id":{"name":"spr_tocha","path":"sprites/spr_tocha/spr_tocha.yy",},},
+    {"id":{"name":"spr_vazio","path":"sprites/spr_vazio/spr_vazio.yy",},},
     {"id":{"name":"tileset","path":"sprites/tileset/tileset.yy",},},
     {"id":{"name":"tl_level","path":"tilesets/tl_level/tl_level.yy",},},
   ],

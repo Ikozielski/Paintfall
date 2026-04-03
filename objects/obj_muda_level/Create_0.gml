@@ -1,0 +1,2 @@
+colidi_player = false;
+

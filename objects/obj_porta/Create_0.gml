@@ -19,6 +19,7 @@ part_type_blend(ptype1, true);
 part_type_life(ptype1, 20, 40);
 
 
+
 estado_aberta = function (){
     vspeed = 0;
     

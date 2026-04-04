@@ -4,6 +4,7 @@
 
 //Chame essa função para criar a transição
 //Não esqueça de definir um destino válido
+///@arg {room} _destino Room de destino da transição
 function cria_transicao_inicia(_destino = noone)
 {
     if (!room_exists(_destino)) 

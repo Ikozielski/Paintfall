@@ -35,4 +35,4 @@ _texto = _texto.scale(.1);
 _texto = _texto.wrap(sprite_width - _margem * 2);
 
 //Desenhando o texto (sempre fazer isso no final de tudo)
-_texto.draw(_x, _y);
+_texto.draw(_x, _y, typist);

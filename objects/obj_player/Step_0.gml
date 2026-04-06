@@ -6,6 +6,7 @@ ajusta_escala();
 retorna_efeito_squash();
 passaPorta();
 retorna_efeito_brilho(.01);
+removendo_colisao_one_way();
 
 estado();
 

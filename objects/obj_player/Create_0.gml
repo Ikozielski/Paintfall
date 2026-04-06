@@ -16,6 +16,10 @@ gravidade                   = .2;
 //cor_brilho = c_white;
 //alpha_brilho = 0;
 
+//Lista de Sprites
+lista_sprites = [spr_player_parando, spr_player_idle];
+indice_sprite = 0;
+
 //Direcao que estou olhando 
 direcao = 1;
 
@@ -36,8 +40,6 @@ poder = 0;
 
 //Varaveis de Estado
 estado = noone;
-
-
 
 
 #endregion
@@ -125,7 +127,43 @@ passaPorta = function (){
     }
 }
 
+//Se estou dentro da one way, eu tiro a colisao dela
+
+removendo_colisao_one_way = function (){
+    //Checando se estou colidindo com a one way
+    if (instance_place(x, y, obj_parede_one_way)){
+        //Checar se ele está na minha lista de colisões 
+        if(array_contains(colisoes, obj_parede_one_way)){
+            //Se ele está na minha lista de colisoes, vou tirar de lá 
+            //Pegando o index dele na lista 
+            var _indice = array_get_index(colisoes, obj_parede_one_way);
+            //Removendo ele da lista de colisoes 
+            array_delete(colisoes, _indice, 1);
+        }
+    }
+}
+
+//Método para fazer a transição de sprites 
+transicao_sprites = function (){
+     troca_sprite(lista_sprites[indice_sprite]);
+    
+    if (acabou_animacao()){
+        
+        //Checando se o array ainda tem sprites
+        var _quantidadeSprites = array_length(lista_sprites) - 1;
+        
+        //Se indice da sprite ainda não chegou no limite do meu array, eu posso avançar na lista
+        if(indice_sprite < _quantidadeSprites) indice_sprite++;
+    }
+}
+
 #region Funções de estado
+
+troca_estado = function (_estado = estado_parado, _listaSprites = [spr_player_parando, spr_player_idle]){
+    estado = _estado;
+    indice_sprite = 0;
+    lista_sprites = _listaSprites;
+}
 
 acabou_animacao = function (){
     var _speed = sprite_get_speed(sprite_index) / FPS
@@ -145,19 +183,26 @@ troca_sprite = function (_sprite = spr_parede){
 
 estado_parado = function (){
     
+    //velocidadeVertical = 0;
     velocidadeHorizontal = 0;
     aplicaVelocidade();
     
-    troca_sprite(spr_player_idle);
-    
+    transicao_sprites();
+     
     //Andei
     if(direita != esquerda){ 
-        estado = estado_movendo;
+        troca_estado(estado_movendo, [spr_player_iniciando_movimento, spr_player_movendo]);
+        
+        //estado = estado_movendo;
+        //indice_sprite = 0;
+        ////Passando a minha lista de sprites
+        //lista_sprites = [spr_player_iniciando_movimento, spr_player_movendo];
     }
     
     //Pulei
     if(jump) {
-        estado = estado_pulando; 
+        troca_estado(estado_pulando, [spr_player_jump_inicia, spr_player_pulo_cima]);
+        
         criaParticulasProfundidade(x, y, depth - 1, obj_particula_pulo);
         efeito_squash(.4, 1.6);
     }
@@ -173,14 +218,19 @@ estado_parado = function (){
 estado_movendo = function (){
     aplicaVelocidade();
     
-    troca_sprite(spr_player_movendo);
+    transicao_sprites();
     
     if(velocidadeHorizontal == 0) {
-        estado = estado_parado;
+        troca_estado(estado_parado, [spr_player_parando, spr_player_idle]);
+        
+        //estado = estado_parado;
+        ////Atualizo a lista e zero o indice da sprite 
+        //indice_sprite = 0;
+        //lista_sprites = [spr_player_parando, spr_player_idle];
     }
     
     if(jump){ 
-        estado = estado_pulando; 
+        troca_estado(estado_pulando, [spr_player_jump_inicia, spr_player_pulo_cima]);
         criaParticulasProfundidade(x, y, depth - 1, obj_particula_pulo);
     }
     
@@ -197,11 +247,16 @@ estado_pulando = function (){
     
     //Como sei que vou usar a sprite do pulo pra cima
     //Como sei que vou usar a sprite do pulo pra baixo
+    var _layer = layer_tilemap_get_id("tl_level")
+    var _colisoes = [obj_parede, _layer];
+    if (place_meeting(x, y + sign(velocidadeVertical), _colisoes)){
+        velocidadeVertical = 0;
+    }
     
     
     //colisoes[2] = obj_parede_one_way;
     if (velocidadeVertical < 0){
-        troca_sprite(spr_player_pulo_cima);
+        transicao_sprites();
         //Removendo a One Way da lista de colisoes 
         
         if (array_contains(colisoes, obj_parede_one_way)){
@@ -214,7 +269,9 @@ estado_pulando = function (){
         //colisoes[2] = obj_parede;
         
     } else { // Estou Caindo, velocidadeVertical é positiva
-        troca_sprite(spr_player_pulo_baixo);
+        lista_sprites = [spr_player_jump_inicio_queda, spr_player_pulo_baixo];
+        transicao_sprites();
+        //troca_sprite(spr_player_pulo_baixo);
         //Se não estou tocando na parede one way
         //Preciso checar que NÃO estou colidindo com a parede one way
         if (!place_meeting(x, y, obj_parede_one_way)){
@@ -227,7 +284,7 @@ estado_pulando = function (){
     
     //Como sei que voltei pro estado parado?
     if (chao){
-       estado = estado_parado;
+       troca_estado(estado_parado, [spr_playe_pousando, spr_player_idle]);
        criaParticulasProfundidade(x, y, depth - 1, obj_particula_pouso); 
         efeito_squash(1, .5);
     }
@@ -256,14 +313,17 @@ estado_powerUp_meio = function (){
 estado_powerUp_fim = function (){
     troca_sprite(spr_player_powerUp_fim);
     if(acabou_animacao()){
-       estado = estado_parado; 
+       troca_estado(estado_parado, [spr_player_idle]);
     } 
 }
 
 estado_tinta_loop = function (){
-    troca_sprite(spr_player_tinta_loop);
+    transicao_sprites();
     
     aplicaVelocidade();
+    
+    //Não poder pular quando estou no tinta loop
+    velocidadeVertical = 0;
     
     mask_index = spr_player_tinta_loop;
     
@@ -278,9 +338,11 @@ estado_tinta_loop = function (){
     }
     
     if(poder){
-        if (_obstaculoCima) exit;
+        if (_obstaculoCima) exit; 
+            
+        troca_estado(estado_tinta_sair, [spr_tinta_fim, spr_player_tinta_sair]);
         instance_create_depth(x, y, depth - 1, obJ_tinta_sair_particulas);
-        estado = estado_tinta_sair;
+        
     }
 }
 
@@ -295,7 +357,10 @@ estado_tinta_entrar = function (){
         instance_create_depth(x, y, depth - 1, obj_tinta_entrar_particulas);
     }
     
-    if (acabou_animacao()) estado = estado_tinta_loop;
+    if (acabou_animacao()) {
+        troca_estado(estado_tinta_loop, [spr_tinta_inicio, spr_player_tinta_loop]);
+    }
+        //estado = estado_tinta_loop;
 
 }
 
@@ -305,9 +370,13 @@ estado_tinta_sair = function (){
     
     
     velocidadeHorizontal = 0;
-    troca_sprite(spr_player_tinta_sair);
     mask_index = spr_player_idle;
-    if(acabou_animacao()) estado = estado_parado; 
+    
+    var _quantidadeArray = array_length(lista_sprites) - 1
+    if(acabou_animacao() && indice_sprite >= _quantidadeArray) {
+        troca_estado(estado_parado, [spr_player_idle]);
+    }
+    transicao_sprites();
     
 }
 

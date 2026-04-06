@@ -11,6 +11,11 @@ image_yscale = .1;
 //Modificando animações do texto
 scribble_anim_wave(1, .3, .1);
 
+//Criando efeito da maquina de Escrever 
+typist = scribble_typist();
+typist.in(1, 5);
+
+
 
 //Meu metodo de iniciar 
 
@@ -28,7 +33,8 @@ iniciando = function (){
 
 //Meu metodo de destruir 
 destruindo = function (){
-     y = lerp(y, ystart, .1);
+    
+    y = lerp(y, ystart, .1);
     
     image_xscale = lerp(image_xscale, 0, .2);
     

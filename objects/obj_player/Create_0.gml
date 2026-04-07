@@ -10,6 +10,8 @@ velocidadeHorizontalMaxima  = 1.5;
 velocidadeVertical          = 0;
 velocidadeVerticalMaxima    = 4;
 gravidade                   = .2;
+velocidadeCorrendo          = 2;
+velocidadeAndando           = 1.5;
 
 //Variaveis do Coyote Jump
 coyote_timer = FPS * .1;
@@ -18,6 +20,9 @@ coyote_timer_atual = coyote_timer;
 //Variaveis Buffer Pulo 
 pulo_timer = FPS * .1;
 pulo_timer_atual = 0;
+
+//Variaveis Corner Correction 
+corner_pixels = 8;
 
 //quantidadePulos = 2;
 //quantidadePulosAtual = quantidadePulos;
@@ -48,6 +53,7 @@ esquerda = 0;
 jump = 0; 
 chao = 0;
 poder = 0;
+corre = 0;
 
 //Varaveis de Estado
 estado = noone;
@@ -146,6 +152,15 @@ pegaImput = function (){
     jump     = keyboard_check_pressed(vk_up);
     //jump_r   = keyboard_check_released(vk_up);
     poder    = keyboard_check_pressed(vk_space);
+    corre    = keyboard_check(vk_shift);
+}
+
+ativa_correr = function (){
+    if(corre){
+        velocidadeHorizontalMaxima = velocidadeCorrendo;
+    }else{
+        velocidadeHorizontalMaxima = velocidadeAndando;
+    }
 }
 
 criaParticulasProfundidade = function (_x, _y, _profundidade, _objeto){
@@ -321,8 +336,46 @@ estado_pulando = function (){
     //Como sei que vou usar a sprite do pulo pra baixo
     var _layer = layer_tilemap_get_id("tl_level")
     var _colisoes = [obj_parede, _layer];
+    //Colidindo com o teto para cima ou para baixo
     if (place_meeting(x, y + sign(velocidadeVertical), _colisoes)){
-        velocidadeVertical = 0;
+        
+        //Se eu estou 'pulando pra cima', eu vou checar se eu preciso fazer uma 
+        //Corner Correction 
+        var _parar = true;
+        if(velocidadeVertical < 0) {//Estou indo pra cima
+            //Checando os pixels da minha borda (la ele)
+            
+            //Checando para a direita
+            for(var _i = 0; _i < corner_pixels; _i++){
+                //Checando se eu NÃO estou colidindo em algum pixel do limite 
+                var _livre = !place_meeting(x + _i, y + velocidadeVertical, _colisoes);
+                
+                if(_livre){
+                    _parar = false;
+                    x += _i;
+                    
+                    break;
+                }
+            }
+            
+            //Corner Correction para a Esquerda
+            for(var _i = 0; _i < corner_pixels; _i++){
+                var _livre = !place_meeting(x - _i, y + velocidadeVertical, _colisoes);
+                
+                //se tem espaço livre, eu movo o player para a esquerda
+                if(_livre){
+                    //Não preciso parar a velocidade vertical
+                    _parar = false;
+                    
+                    //Vou mudar a posição x do player para a esquerda
+                    x -= _i;
+                    
+                    break;
+                }
+            }
+        }
+        
+        if(_parar) velocidadeVertical = 0;
     }
     
     

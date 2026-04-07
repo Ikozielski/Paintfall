@@ -12,8 +12,12 @@ velocidadeVerticalMaxima    = 4;
 gravidade                   = .2;
 
 //Variaveis do Coyote Jump
-coyote_timer = 20;
+coyote_timer = FPS * .1;
 coyote_timer_atual = coyote_timer;
+
+//Variaveis Buffer Pulo 
+pulo_timer = FPS * .1;
+pulo_timer_atual = 0;
 
 //quantidadePulos = 2;
 //quantidadePulosAtual = quantidadePulos;
@@ -87,6 +91,17 @@ puloPlayer = function (){
     //}
 //}
 
+bufferPulo = function (){
+    checaChao();
+    pegaImput();
+    
+    if(!chao){
+        if (jump) pulo_timer_atual = pulo_timer;
+            
+        pulo_timer_atual--;
+    }
+}
+
 //Criando Metodo de Coyote Jump 
 coyote_jump = function (){
     checaChao();
@@ -105,6 +120,12 @@ aplicaGravidade = function (){
     } else{
         velocidadeVertical = 0;
         y = round(y);
+        
+        if(jump || pulo_timer_atual){
+            velocidadeVertical = -velocidadeVerticalMaxima;
+            pulo_timer_atual = 0;
+        }
+        
     }
     
     //Limitando a velocidade vertical do player 
@@ -123,7 +144,7 @@ pegaImput = function (){
     direita  = keyboard_check(vk_right); 
     esquerda = keyboard_check(vk_left);
     jump     = keyboard_check_pressed(vk_up);
-    jump_r   = keyboard_check_released(vk_up);
+    //jump_r   = keyboard_check_released(vk_up);
     poder    = keyboard_check_pressed(vk_space);
 }
 
@@ -212,7 +233,7 @@ troca_sprite = function (_sprite = spr_parede){
 
 estado_parado = function (){
     
-    //velocidadeVertical = 0;
+    if(pulo_timer_atual == 0) velocidadeVertical = 0;
     velocidadeHorizontal = 0;
     aplicaVelocidade();
     
@@ -229,7 +250,7 @@ estado_parado = function (){
     }
     
     //Pulei
-    if(jump) {
+    if(jump || pulo_timer_atual) {
         troca_estado(estado_pulando, [spr_player_jump_inicia, spr_player_pulo_cima]);
         
         criaParticulasProfundidade(x, y, depth - 1, obj_particula_pulo);
@@ -283,7 +304,7 @@ estado_pulando = function (){
     
     aplicaVelocidade();
     
-    if(coyote_timer_atual > 0 && jump){
+    if(coyote_timer_atual >= 0 && jump){
         velocidadeVertical = -velocidadeVerticalMaxima;
         
         coyote_timer_atual = 0;
@@ -292,6 +313,7 @@ estado_pulando = function (){
         efeito_squash(.4, 1.6);
         
     }
+    
     
     //troca_sprite(spr_player_pulo_cima);
     
@@ -318,10 +340,11 @@ estado_pulando = function (){
         
         //colisoes[2] = obj_parede;
         
-        if(jump_r){
-            //Corto a velocidade Vertical dele pela metade 
-            velocidadeVertical *= .5;
-        }
+        //Fazer o player pular mais alto se segurar o botão, eu tirei pq nao gosto disso 
+        //if(jump_r){
+            ////Corto a velocidade Vertical dele pela metade 
+            //velocidadeVertical *= .5;
+        //}
         
         
         
@@ -347,8 +370,8 @@ estado_pulando = function (){
         //Resetando a quantidade de pulos 
         //quantidadePulosAtual = quantidadePulos;
         
-       troca_estado(estado_parado, [spr_playe_pousando, spr_player_idle]);
-       criaParticulasProfundidade(x, y, depth - 1, obj_particula_pouso); 
+        troca_estado(estado_parado, [spr_playe_pousando, spr_player_idle]);
+        criaParticulasProfundidade(x, y, depth - 1, obj_particula_pouso); 
         efeito_squash(1, .5);
     }
 }

@@ -11,6 +11,13 @@ velocidadeVertical          = 0;
 velocidadeVerticalMaxima    = 4;
 gravidade                   = .2;
 
+//Variaveis do Coyote Jump
+coyote_timer = 20;
+coyote_timer_atual = coyote_timer;
+
+//quantidadePulos = 2;
+//quantidadePulosAtual = quantidadePulos;
+
 
 ////Variaveis do Shaders
 //cor_brilho = c_white;
@@ -69,6 +76,27 @@ puloPlayer = function (){
     if (chao && jump) velocidadeVertical = -velocidadeVerticalMaxima; 
 }
 
+//puloDuplo = function (){
+     //if(jump && quantidadePulosAtual > 0){
+        ////Ajustando as Sprites 
+        //lista_sprites = [spr_player_jump_inicia, spr_player_pulo_cima];
+        //transicao_sprites();
+        //
+        //velocidadeVertical = -velocidadeVerticalMaxima;
+        //quantidadePulosAtual--;
+    //}
+//}
+
+//Criando Metodo de Coyote Jump 
+coyote_jump = function (){
+    checaChao();
+    if (!chao){
+        coyote_timer_atual--;
+    } else{
+        coyote_timer_atual = coyote_timer;
+    }
+}
+
 aplicaGravidade = function (){
     // Se não estiver tocando no chão, aplica a gravidade 
     
@@ -92,10 +120,11 @@ checaChao = function (){
 pegaImput = function (){
     
     //Pegando Imputs
-    direita = keyboard_check(vk_right); 
+    direita  = keyboard_check(vk_right); 
     esquerda = keyboard_check(vk_left);
-    jump = keyboard_check_pressed(vk_up);
-    poder = keyboard_check_pressed(vk_space);
+    jump     = keyboard_check_pressed(vk_up);
+    jump_r   = keyboard_check_released(vk_up);
+    poder    = keyboard_check_pressed(vk_space);
 }
 
 criaParticulasProfundidade = function (_x, _y, _profundidade, _objeto){
@@ -232,6 +261,7 @@ estado_movendo = function (){
     if(jump){ 
         troca_estado(estado_pulando, [spr_player_jump_inicia, spr_player_pulo_cima]);
         criaParticulasProfundidade(x, y, depth - 1, obj_particula_pulo);
+        efeito_squash(.4, 1.6);
     }
     
     if(!chao) estado = estado_pulando;
@@ -242,8 +272,28 @@ estado_movendo = function (){
 }
 
 estado_pulando = function (){
+    
+    static _inicia_pulo = true;
+    
+    if(_inicia_pulo){
+        _inicia_pulo = false;
+       // quantidadePulosAtual--;
+        
+    }
+    
     aplicaVelocidade();
-  //troca_sprite(spr_player_pulo_cima);
+    
+    if(coyote_timer_atual > 0 && jump){
+        velocidadeVertical = -velocidadeVerticalMaxima;
+        
+        coyote_timer_atual = 0;
+        
+        criaParticulasProfundidade(x, y, depth - 1, obj_particula_pulo);
+        efeito_squash(.4, 1.6);
+        
+    }
+    
+    //troca_sprite(spr_player_pulo_cima);
     
     //Como sei que vou usar a sprite do pulo pra cima
     //Como sei que vou usar a sprite do pulo pra baixo
@@ -268,6 +318,13 @@ estado_pulando = function (){
         
         //colisoes[2] = obj_parede;
         
+        if(jump_r){
+            //Corto a velocidade Vertical dele pela metade 
+            velocidadeVertical *= .5;
+        }
+        
+        
+        
     } else { // Estou Caindo, velocidadeVertical é positiva
         lista_sprites = [spr_player_jump_inicio_queda, spr_player_pulo_baixo];
         transicao_sprites();
@@ -282,8 +339,14 @@ estado_pulando = function (){
         } 
       }
     
+   //puloDuplo();
+    
     //Como sei que voltei pro estado parado?
     if (chao){
+        _inicia_pulo = true;
+        //Resetando a quantidade de pulos 
+        //quantidadePulosAtual = quantidadePulos;
+        
        troca_estado(estado_parado, [spr_playe_pousando, spr_player_idle]);
        criaParticulasProfundidade(x, y, depth - 1, obj_particula_pouso); 
         efeito_squash(1, .5);

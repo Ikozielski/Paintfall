@@ -6,15 +6,16 @@ inicia_efeito_brilho();
 
 
 velocidadeHorizontal        = 0;
-velocidadeHorizontalMaxima  = 1.5;
+velocidadeHorizontalMaxima  = 1.6;
 velocidadeVertical          = 0;
 velocidadeVerticalMaxima    = 4;
 gravidade                   = .2;
 velocidadeCorrendo          = 2;
-velocidadeAndando           = 1.5;
+velocidadeAndando           = 1.6;
 powerUp = global.pegueiPowerUp;
 chaves = 0;
 minhasChaves = [];
+gasteiChave = false;
 
 //Variaveis do Coyote Jump
 coyote_timer = FPS * .1;
@@ -193,10 +194,10 @@ passaPorta = function (){
     
     if(_porta){
         
-       if(chaves > 0 && _porta.estado == _porta.estado_fechada){  
+       if(chaves > 0 && _porta.estado == _porta.estado_fechada && !gasteiChave){  
         
             chaves -= 1;
-            //porta.estado = porta.estado_abrindo;
+            //_porta.estado = _porta.estado_abrindo;
             
             //Não vai destruir mais a porta, e sim mandar ela para o estado "abrindo"
             //instance_destroy(obj_porta.id);
@@ -207,6 +208,8 @@ passaPorta = function (){
             //Vai avisar pra ULTIMA chave que ela tem que ir até a porta para abri-la 
             
             minhasChaves[chaves].abrindoPorta = true;
+        
+            minhasChaves[chaves].porta_alvo = _porta;
         }  
     }
    
@@ -557,6 +560,8 @@ rodaDebug = function (){
     dbg_watch(ref_create(id, "velocidadeVertical"), "VelocidadeVertical"); 
     dbg_slider(ref_create(id, "velocidadeVerticalMaxima"), 0, 10, "Velocidade Maxima", .1);
     dbg_slider(ref_create(id, "gravidade"), 0, 3, "Gravidade", .001);
+    dbg_slider(ref_create(id, "velocidadeAndando"), 0, 3, "Velocidade Andando", .1);
+    dbg_slider(ref_create(id, "velocidadeCorrendo"), 0, 4, "Velocidade Correndo", .2);
     
 }
 

@@ -20,5 +20,3 @@ segue_player = function (){
         y = lerp(y, alvo.y - alvo.sprite_height / 1.5 + _sinwave * (numeroChaves * random_range(.1, .2)), .1);   
     }
 }
-
-

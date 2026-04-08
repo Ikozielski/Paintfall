@@ -1,6 +1,8 @@
 //Saiba se ele precisa seguir o alvo (o Player)
 seguePlayer = false;
 alvo = noone;
+abrindoPorta = false;
+porta_alvo = noone;
 
 numeroChaves = 0;
 
@@ -18,3 +20,5 @@ segue_player = function (){
         y = lerp(y, alvo.y - alvo.sprite_height / 1.5 + _sinwave * (numeroChaves * random_range(.1, .2)), .1);   
     }
 }
+
+

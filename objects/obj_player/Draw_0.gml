@@ -3,7 +3,7 @@ draw_sprite_ext(sprite_index, image_index, x, y, xscale * direcao, yscale, image
 
 desenha_efeito_brilho();
 
-draw_text(x, y, velocidadeHorizontalMaxima);
+draw_text(x, y, chaves);
 
 
 

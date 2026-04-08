@@ -14,6 +14,7 @@ velocidadeCorrendo          = 2;
 velocidadeAndando           = 1.5;
 powerUp = global.pegueiPowerUp;
 chaves = 0;
+minhasChaves = [];
 
 //Variaveis do Coyote Jump
 coyote_timer = FPS * .1;
@@ -188,15 +189,27 @@ pega_powerUp = function (){
 
 passaPorta = function (){
     //Preciso checar se a porta esta no estado de fechada, pra poder fazer isso :
-    var porta = instance_place(x + velocidadeHorizontal, y, obj_porta);
+    var _porta = instance_place(x + velocidadeHorizontal, y, obj_porta);
     
-    if(chaves > 0 && porta && porta.estado == porta.estado_fechada){  
+    if(_porta){
         
-        chaves -= 1;
-        porta.estado = porta.estado_abrindo;
-        //Não vai destruir mais a porta, e sim mandar ela para o estado "abrindo"
-        //instance_destroy(obj_porta.id);
+       if(chaves > 0 && _porta.estado == _porta.estado_fechada){  
+        
+            chaves -= 1;
+            //porta.estado = porta.estado_abrindo;
+            
+            //Não vai destruir mais a porta, e sim mandar ela para o estado "abrindo"
+            //instance_destroy(obj_porta.id);
+            
+            //Vou destruir a ULTIMA chave da minha lista de chaves 
+            //instance_destroy(minhasChaves[chaves])
+            
+            //Vai avisar pra ULTIMA chave que ela tem que ir até a porta para abri-la 
+            
+            minhasChaves[chaves].abrindoPorta = true;
+        }  
     }
+   
 }
 
 //Se estou dentro da one way, eu tiro a colisao dela

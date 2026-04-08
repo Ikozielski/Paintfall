@@ -1,9 +1,9 @@
 
 global.debug = false;
 
+//Deinir powerUp pra sempre 
 global.pegueiPowerUp = false;
 
-global.chaves = 0;
 
 global.leveis = [ 
     {room: rm_tutorial_1, nome: "Tutorial 1", concluida: false},
@@ -12,3 +12,5 @@ global.leveis = [
 ];
 
 global.faseAtual = 0;
+
+

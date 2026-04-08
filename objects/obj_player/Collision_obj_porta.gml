@@ -1,1 +1,1 @@
-if(global.chaves > 0) instance_destroy();
+//if(chaves > 0) other.instance_destroy();

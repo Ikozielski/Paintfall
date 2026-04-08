@@ -12,6 +12,8 @@ velocidadeVerticalMaxima    = 4;
 gravidade                   = .2;
 velocidadeCorrendo          = 2;
 velocidadeAndando           = 1.5;
+powerUp = global.pegueiPowerUp;
+chaves = 0;
 
 //Variaveis do Coyote Jump
 coyote_timer = FPS * .1;
@@ -23,6 +25,7 @@ pulo_timer_atual = 0;
 
 //Variaveis Corner Correction 
 corner_pixels = 8;
+
 
 //quantidadePulos = 2;
 //quantidadePulosAtual = quantidadePulos;
@@ -84,6 +87,10 @@ movimento = function (){
 
 puloPlayer = function (){
     if (chao && jump) velocidadeVertical = -velocidadeVerticalMaxima; 
+}
+
+pega_chave = function (){
+    chaves++;
 }
 
 //puloDuplo = function (){
@@ -183,9 +190,9 @@ passaPorta = function (){
     //Preciso checar se a porta esta no estado de fechada, pra poder fazer isso :
     var porta = instance_place(x + velocidadeHorizontal, y, obj_porta);
     
-    if(global.chaves > 0 && porta && porta.estado == porta.estado_fechada){  
+    if(chaves > 0 && porta && porta.estado == porta.estado_fechada){  
         
-        global.chaves -= 1;
+        chaves -= 1;
         porta.estado = porta.estado_abrindo;
         //Não vai destruir mais a porta, e sim mandar ela para o estado "abrindo"
         //instance_destroy(obj_porta.id);
@@ -436,7 +443,7 @@ estado_powerUp_inicio = function (){
     velocidadeHorizontal = 0;
     velocidadeVertical = 0;
     
-    global.pegueiPowerUp = true;
+    powerUp = true;
     
     if(acabou_animacao()) estado = estado_powerUp_meio;
     

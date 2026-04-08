@@ -21,4 +21,4 @@ estado();
 //if(keyboard_check_pressed(ord("K"))) aplica_efeito_brilho();
     //
 
-if (keyboard_check_pressed(ord("G"))) global.chaves += 1;
+if (keyboard_check_pressed(ord("G"))) chaves += 1;

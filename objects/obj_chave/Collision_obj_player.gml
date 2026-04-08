@@ -1,2 +1,9 @@
-global.chaves += 1;
-instance_destroy();
+if(seguePlayer) exit;
+
+other.pega_chave();
+seguePlayer = true;
+alvo = other.id;
+
+numeroChaves = alvo.chaves;
+
+//instance_destroy();

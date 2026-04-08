@@ -11,6 +11,9 @@ if(alvo == noone){
     movendo();
     explosao();
     
+    global.pegueiPowerUp = true;
+    other.powerUp = true;
+    
 }
 
 

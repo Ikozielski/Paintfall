@@ -1,3 +1,6 @@
+
+if(global.pegueiPowerUp) instance_destroy();
+
 //Indo para a cabeça do player
 
 alvo = noone;

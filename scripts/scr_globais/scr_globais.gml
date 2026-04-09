@@ -3,6 +3,7 @@ global.debug = false;
 
 //Deinir powerUp pra sempre 
 global.pegueiPowerUp = false;
+global.poweUpCorrer  = false;
 
 
 global.leveis = [ 

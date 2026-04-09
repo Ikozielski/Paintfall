@@ -82,6 +82,12 @@
   ],
   "ForcedPrefabProjectReferences":[
     {"link":"io.gamemaker.sdfshaders-1.0.0","name":"io.gamemaker.sdfshaders-1.0.0","path":"io.gamemaker.sdfshaders-1.0.0.yyp",},
+    {"link":"io.gamemaker.gm_effect_blend-1.0.0","name":"io.gamemaker.gm_effect_blend-1.0.0","path":"io.gamemaker.gm_effect_blend-1.0.0.yyp",},
+    {"link":"io.gamemaker.gm_effect_gaussian_blur-1.0.0","name":"io.gamemaker.gm_effect_gaussian_blur-1.0.0","path":"io.gamemaker.gm_effect_gaussian_blur-1.0.0.yyp",},
+    {"link":"io.gamemaker.gm_effect_glow-1.0.0","name":"io.gamemaker.gm_effect_glow-1.0.0","path":"io.gamemaker.gm_effect_glow-1.0.0.yyp",},
+    {"link":"io.gamemaker.gm_filter_gradient-1.0.0","name":"io.gamemaker.gm_filter_gradient-1.0.0","path":"io.gamemaker.gm_filter_gradient-1.0.0.yyp",},
+    {"link":"io.gamemaker.gm_filter_ripples-1.0.0","name":"io.gamemaker.gm_filter_ripples-1.0.0","path":"io.gamemaker.gm_filter_ripples-1.0.0.yyp",},
+    {"link":"io.gamemaker.gm_filter_underwater-1.0.0","name":"io.gamemaker.gm_filter_underwater-1.0.0","path":"io.gamemaker.gm_filter_underwater-1.0.0.yyp",},
   ],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"scribble_license.txt","CopyToMask":-1,"filePath":"datafiles","name":"scribble_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -302,6 +308,7 @@
     {"id":{"name":"spr_player_tinta_loop","path":"sprites/spr_player_tinta_loop/spr_player_tinta_loop.yy",},},
     {"id":{"name":"spr_player_tinta_sair","path":"sprites/spr_player_tinta_sair/spr_player_tinta_sair.yy",},},
     {"id":{"name":"spr_porta","path":"sprites/spr_porta/spr_porta.yy",},},
+    {"id":{"name":"spr_portal","path":"sprites/spr_portal/spr_portal.yy",},},
     {"id":{"name":"spr_pouso_particulas","path":"sprites/spr_pouso_particulas/spr_pouso_particulas.yy",},},
     {"id":{"name":"spr_powerUp","path":"sprites/spr_powerUp/spr_powerUp.yy",},},
     {"id":{"name":"spr_pulo_particulas","path":"sprites/spr_pulo_particulas/spr_pulo_particulas.yy",},},

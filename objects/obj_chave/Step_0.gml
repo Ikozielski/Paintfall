@@ -19,6 +19,7 @@ if(abrindoPorta){
     if(_distancia_X < 2){
         porta_alvo.estado = porta_alvo.estado_abrindo;
         obj_player.gasteiChave = false;
+        ScreenShake(20);
         instance_destroy();
     }
     

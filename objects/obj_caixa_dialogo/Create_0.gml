@@ -21,7 +21,7 @@ typist.in(1, 5);
 
 iniciando = function (){
     image_xscale = lerp(image_xscale, 2.5, .1);
-    image_yscale = lerp(image_yscale, 1, .1);
+    image_yscale = lerp(image_yscale, 1.1, .1);
     image_alpha = lerp(image_alpha, .8, .1);
 
     y = lerp(y, ystart - 30, .1);

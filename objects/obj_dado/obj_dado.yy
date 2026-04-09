@@ -33,10 +33,11 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v2","%Name":"estado_inicial","filters":[],"listItems":[
-        "\"estado_parado_pulo\"",
-        "\"estado_parado_x\"",
-      ],"multiselect":false,"name":"estado_inicial","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"estado_parado_pulo\"","varType":6,},
-    {"$GMObjectProperty":"v2","%Name":"tempo_parado","filters":[],"listItems":[],"multiselect":false,"name":"tempo_parado","rangeEnabled":false,"rangeMax":10.0,"rangeMin":1.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"60","varType":1,},
+        "\"estado_setinha\"",
+        "\"estado_x\"",
+      ],"multiselect":false,"name":"estado_inicial","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"estado_setinha\"","varType":6,},
+    {"$GMObjectProperty":"v2","%Name":"tempo","filters":[],"listItems":[],"multiselect":false,"name":"tempo","rangeEnabled":false,"rangeMax":10.0,"rangeMin":1.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"60","varType":1,},
+    {"$GMObjectProperty":"v2","%Name":"timer","filters":[],"listItems":[],"multiselect":false,"name":"timer","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"60","varType":1,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

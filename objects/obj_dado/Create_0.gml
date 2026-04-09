@@ -1,43 +1,88 @@
 estado = noone;
-alarme_pulo = false;
-alarme_x = false;
+//alarme_pulo = false;
+//alarme_x = false;
 
-#region Maquina de Estados
+//#region Maquina de Estados
+//
+//function estado_parado_pulo(){
+    //image_index = 0;
+    //
+    //mask_index = sprite_index;
+    //
+    //if(!alarme_pulo){
+        //alarm[0] = tempo_parado; 
+        //alarme_pulo = true;
+    //}
+    //
+//}
+//
+//function estado_transicao_to_x(){
+    //if(image_index >= 8) estado = estado_parado_x;
+    //
+//}
+//function estado_parado_x(){
+    //image_index = 10;
+    //
+    //mask_index = spr_vazio;
+    //
+    //if(!alarme_x){
+        //alarm[1] = tempo_parado; 
+        //alarme_x = true;
+    //}
+//}
+//
+//function estado_transicao_to_pulo(){
+    //if(image_index >= image_number -1) estado = estado_parado_pulo;
+//}
+//
+//#endregion
+//
+//estado = estado_parado_pulo;
+//if(estado_inicial == "estado_parado_x"){
+    //estado = estado_parado_x;
+//}
 
-function estado_parado_pulo(){
+
+contador_estado = function (_estado_destino = estado_setinha){
+    timer--;
+    if(timer <= 0){
+        timer = tempo;
+        estado = _estado_destino;
+    }
+}
+
+
+estado_setinha = function (){
     image_index = 0;
     
     mask_index = sprite_index;
-    
-    if(!alarme_pulo){
-        alarm[0] = tempo_parado; 
-        alarme_pulo = true;
-    }
-    
+    //Diminuindo o valor do timer
+    contador_estado(estado_setinha_para_x);
 }
 
-function estado_transicao_to_x(){
-    if(image_index >= 8) estado = estado_parado_x;
-    
+estado_setinha_para_x = function (){
+    if(image_index >= 8){
+        estado = estado_x;
+    }
 }
-function estado_parado_x(){
-    image_index = 10;
-    
+
+estado_x = function (){
+    image_index = 8;
     mask_index = spr_vazio;
-    
-    if(!alarme_x){
-        alarm[1] = tempo_parado; 
-        alarme_x = true;
+   contador_estado(estado_x_para_seta);
+}
+
+estado_x_para_seta = function (){
+    //Se acabou a animação eu vou pro estado da seta 
+    if(image_index >= image_number - 1){
+        estado = estado_setinha;
     }
 }
 
-function estado_transicao_to_pulo(){
-    if(image_index >= image_number -1) estado = estado_parado_pulo;
-}
+//Definindo o estado inicial dele 
+estado = estado_setinha; //mas, se for X ele inicia no X 
 
-#endregion
-
-estado = estado_parado_pulo;
-if(estado_inicial == "estado_parado_x"){
-    estado = estado_parado_x;
+//Se o estado inicial for X, eu coloco ele no X, se não é setinha 
+if(estado_inicial == "estado_x"){
+    estado = estado_x;
 }

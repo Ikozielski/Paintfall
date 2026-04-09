@@ -16,7 +16,7 @@ powerUp = global.pegueiPowerUp;
 chaves = 0;
 minhasChaves = [];
 gasteiChave = false;
-
+teste = 0;
 //Variaveis do Coyote Jump
 coyote_timer = FPS * .1;
 coyote_timer_atual = coyote_timer;

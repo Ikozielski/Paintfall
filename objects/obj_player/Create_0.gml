@@ -11,7 +11,7 @@ velocidadeVertical          = 0;
 velocidadeVerticalMaxima    = 4;
 gravidade                   = .2;
 velocidadeCorrendo          = 2.5;
-velocidadeAndando           = 1.4;
+velocidadeAndando           = 1.6;
 powerUp = global.pegueiPowerUp;
 chaves = 0;
 minhasChaves = [];
@@ -269,6 +269,11 @@ troca_sprite = function (_sprite = spr_parede){
     }
 }
 
+//Criando um estado que o player não tem controle 
+estado_sem_controle = function (){
+    
+}
+
 estado_parado = function (){
     
     if(pulo_timer_atual == 0) velocidadeVertical = 0;
@@ -494,7 +499,7 @@ estado_tinta_loop = function (){
     
     
     //Se na minha frente e embaixo de mim nao tiver chão, eu zero meu velh
-    var _parar = !place_meeting(x + (velocidadeHorizontal * 10), y + 1, tileTinta);
+    var _parar = !place_meeting(x + (sign(velocidadeHorizontal) * 10), y + 1, tileTinta);
     if(_parar){
         velocidadeHorizontal = 0;
     }

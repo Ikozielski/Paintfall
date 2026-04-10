@@ -1,0 +1,2 @@
+destino_x = 0;
+destino_y = 0;

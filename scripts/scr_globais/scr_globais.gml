@@ -2,8 +2,8 @@
 global.debug = false;
 
 //Deinir powerUp pra sempre 
-global.pegueiPowerUp = false;
-global.poweUpCorrer  = false;
+global.pegueiPowerUp = true;
+global.poweUpCorrer  = true;
 
 
 global.leveis = [ 
@@ -13,5 +13,7 @@ global.leveis = [
 ];
 
 global.faseAtual = 0;
+
+global.tutorialConcluido = false;
 
 

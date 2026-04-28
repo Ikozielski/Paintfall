@@ -1,0 +1,1 @@
+if(global.level_1_concluido) exit;

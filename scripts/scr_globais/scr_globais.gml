@@ -16,4 +16,4 @@ global.faseAtual = 0;
 
 global.tutorialConcluido = false;
 
-
+global.level_1_concluido = true;

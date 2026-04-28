@@ -1,0 +1,1 @@
+if (estado_aberta) global.level_1_concluido = true;

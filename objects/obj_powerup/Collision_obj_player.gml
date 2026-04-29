@@ -11,9 +11,12 @@ if(alvo == noone){
     movendo();
     explosao();
     
-    global.pegueiPowerUp = true;
-    other.powerUp = true;
+    //global.powerUp_tinta = true;
+    //other.powerUp = true;
     
+    variable_global_set(powerUp, true);
+    
+    other.ativa_power_up();
 }
 
 

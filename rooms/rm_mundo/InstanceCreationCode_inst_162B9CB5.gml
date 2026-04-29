@@ -1,1 +1,1 @@
-if(global.level_1_concluido) exit;
+if(global.level_1_concluido) destino = noone;

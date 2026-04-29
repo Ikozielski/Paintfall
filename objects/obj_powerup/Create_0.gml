@@ -1,5 +1,7 @@
 
-if(global.pegueiPowerUp) instance_destroy();
+if(variable_global_get(powerUp)) instance_destroy();
+    
+//if(global.powerUp_tinta) instance_destroy();
 
 //Indo para a cabeça do player
 

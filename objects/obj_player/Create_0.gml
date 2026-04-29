@@ -12,7 +12,7 @@ velocidadeVerticalMaxima    = 4;
 gravidade                   = .2;
 velocidadeCorrendo          = 2.5;
 velocidadeAndando           = 1.6;
-powerUp = global.pegueiPowerUp;
+powerUp = global.powerUp_tinta;
 chaves = 0;
 minhasChaves = [];
 gasteiChave = false;
@@ -245,6 +245,10 @@ transicao_sprites = function (){
     }
 }
 
+ativa_power_up = function (){
+    powerUp = global.powerUp_tinta;
+}
+
 #region Funções de estado
 
 troca_estado = function (_estado = estado_parado, _listaSprites = [spr_player_parando, spr_player_idle]){
@@ -302,7 +306,7 @@ estado_parado = function (){
     
     //Quando eu apertar o botao de poder, eu entro na tinta 
     //Se eu estou no TileMap da tinta eu entro na tinta
-    if(poder && global.pegueiPowerUp && chaoTinta){
+    if(poder && global.powerUp_tinta && chaoTinta){
         estado = estado_tinta_entrar;
     }
     
@@ -330,7 +334,7 @@ estado_movendo = function (){
     
     if(!chao) estado = estado_pulando;
     
-    if(poder && global.pegueiPowerUp && chaoTinta){
+    if(poder && global.powerUp_tinta && chaoTinta){
         estado = estado_tinta_entrar;
     }
 }

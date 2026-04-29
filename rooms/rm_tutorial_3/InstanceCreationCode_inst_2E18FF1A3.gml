@@ -1,3 +1,3 @@
 
 global.tutorialConcluido = true;
-global.pegueiPowerUp = false;
+global.powerUp_tinta = false;

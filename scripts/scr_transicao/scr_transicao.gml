@@ -9,7 +9,7 @@ function cria_transicao_inicia(_destino = noone)
 {
     if (!room_exists(_destino)) 
     {
-        show_message("defina um destino")
+        //show_message("defina um destino")
         return;
     }
     

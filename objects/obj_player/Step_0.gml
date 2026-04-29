@@ -9,7 +9,7 @@ retorna_efeito_brilho(.01);
 removendo_colisao_one_way();
 coyote_jump();
 bufferPulo();
-if(global.poweUpCorrer) ativa_correr();
+if(global.powerUp_correr) ativa_correr();
 
 estado();
 

@@ -95,6 +95,7 @@ pega_chave = function (){
     chaves++;
 }
 
+//Tirei o pulo duplo pq não gosto, e pra esse jogo não precisa 
 //puloDuplo = function (){
      //if(jump && quantidadePulosAtual > 0){
         ////Ajustando as Sprites 

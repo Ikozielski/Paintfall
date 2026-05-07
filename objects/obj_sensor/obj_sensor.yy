@@ -27,6 +27,11 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
+    {"$GMObjectProperty":"v2","%Name":"modo","filters":[],"listItems":[
+        "\"metodo_trava_player\"",
+        "\"metodo_retorna_player\"",
+        "\"metodo_define_posicao_player\"",
+      ],"multiselect":false,"name":"modo","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"metodo_trava_player\"","varType":6,},
     {"$GMObjectProperty":"v2","%Name":"destino_x","filters":[],"listItems":[],"multiselect":false,"name":"destino_x","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"192","varType":1,},
     {"$GMObjectProperty":"v2","%Name":"destino_y","filters":[],"listItems":[],"multiselect":false,"name":"destino_y","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"256","varType":0,},
   ],

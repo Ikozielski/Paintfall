@@ -2,8 +2,8 @@
 global.debug = false;
 
 //Deinir powerUp pra sempre 
-global.powerUp_tinta = false;
-global.powerUp_correr  = false;
+global.powerUp_tinta = true;
+global.powerUp_correr  = true;
 
 
 global.leveis = [ 
@@ -20,3 +20,8 @@ global.faseAtual = 0;
 //Globais fases
 global.tutorialConcluido = false;
 global.level_1_concluido = false;
+
+
+//Posição inicial do player 
+global.player_x = 528;
+global.player_y = 444;

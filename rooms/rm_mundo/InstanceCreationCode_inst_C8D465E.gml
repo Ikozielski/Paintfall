@@ -1,1 +1,0 @@
-metodo_generico = metodo_retorna_player;

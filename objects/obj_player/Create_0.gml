@@ -68,6 +68,19 @@ estado = noone;
 
 #region Métodos
 
+
+//Criar um método que vai checar se o player precisa mudar a posição inicial dele 
+//Criar variaveis globais que vão definir a posição inicial do player 
+//Rodar esse medodo no create dele (usando a variavel hub_player que só será true no hub world)
+
+inicia_player = function (){
+    
+    if (!hub_player) return;
+    
+    x = global.player_x;
+    y = global.player_y;
+}
+
 aplicaVelocidade  = function (){
     
     checaChao();
@@ -601,3 +614,6 @@ ativaDebug = function (){
 
 //Final do Create
 estado = estado_parado;
+
+//Definindo a minha posição inicial 
+inicia_player();

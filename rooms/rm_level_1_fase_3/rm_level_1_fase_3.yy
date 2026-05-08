@@ -58,6 +58,7 @@
     {"name":"inst_68091297","path":"rooms/rm_level_1_fase_3/rm_level_1_fase_3.yy",},
     {"name":"inst_6946DEE5","path":"rooms/rm_level_1_fase_3/rm_level_1_fase_3.yy",},
     {"name":"inst_5FD3E258","path":"rooms/rm_level_1_fase_3/rm_level_1_fase_3.yy",},
+    {"name":"inst_75BF2DA6","path":"rooms/rm_level_1_fase_3/rm_level_1_fase_3.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -110,6 +111,7 @@
         {"$GMRInstance":"v4","%Name":"inst_5FD3E258","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5FD3E258","objectId":{"name":"obj_powerup","path":"objects/obj_powerup/obj_powerup.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_powerup","path":"objects/obj_powerup/obj_powerup.yy",},"propertyId":{"name":"powerUp","path":"objects/obj_powerup/obj_powerup.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"powerUp_correr",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":848.0,"y":336.0,},
+        {"$GMRInstance":"v4","%Name":"inst_75BF2DA6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_75BF2DA6","objectId":{"name":"obj_powerup","path":"objects/obj_powerup/obj_powerup.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":880.0,"y":32.0,},
       ],"layers":[],"name":"Level","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Dados","depth":500,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":8,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Dados","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Enfeites","depth":600,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[

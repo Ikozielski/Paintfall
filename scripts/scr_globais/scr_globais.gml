@@ -23,9 +23,9 @@ global.level_1_concluido = false;
 
 
 //Posição inicial do player 
-global.player_x = 712;
-global.player_y = 560;
+global.player_x = 72;    //Inicio 72
+global.player_y = 96;    //Inicio 96
 global.roomAtual = rm_mundo;
 
 
-global.saveAtual = 1;
+global.saveAtual = 2;

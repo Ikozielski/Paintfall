@@ -52,7 +52,86 @@ Parado no X
     Aí ele muda para o estado de transição para a seta 
     Depois ele roda a transição e volta para o estado da setinha pra cima
 
+
+Terminei as aulas 08/05/2026 - Agora vou fazer minhas próprias modificações, até o jogo ficar do jeito que quero
+Quero levar no máximo duas semanas pra implementar tudo isso - Provavelmente vou fazer mais coisas do que quero inicialmente
+mas vou anotanto aqui 
+
+Preciso também exportar todos os pacotes de funcionalidades úteis desse projeto pra minha own lib - Mas provalvemnte
+vou deixar pra depois que postar o jogo 
+
+
+-----------------------------------------------------------------------------------------------------------------
+Inicio 08/05/2026 - Espero terminar no Máximo até 22/05/2026
+
+TODO: 
+
+Implementar espinhos, pra ser um desafio maior pro jogador 
+
+Implementar a interação com a Caixa pra alcançar lugares maiores 
+
+Tutorial
+    Adicionar e Explicar Sobre
+        Caixa
+        Espinhos
+        Corrida
+
+Adicionar Músicas - Pensei em usar músicas do GC
+    Menu
+        Efeitos
+        Música 
     
+    Efeito Power Up 
+    Efeito Ghosting  
+    Porta abrindo 
+    Pegar Chave
+    Música Tutorial 
+    Música Fases 
+        1
+        2
+        3
+    Talvez (ou não)
+        Efeito empurrando a caixa
+        Pulando (acho que esse realmente não, muito chato)
+    
+
+    
+Fazer os leveis 2 e 3 do jogo (Cada um com 3 fases)
+    Quero usar a mecânica do ghosting nessas fases, além de colocar os espínhos e as caixas (não quero mexer no lvl 1)
+    Foco das fases 
+        2: Velocidade 
+        3: Tudo 
+    
+Melhorar a Tela dos Saves (Tela 01)
+    Colocar uma animação para o nome do jogo (PaintFall)
+    Colocar uma lixeira pra poder deletar o save 
+        Com pop-up pra confirmar
+    
+
+Fazer tela de inicio depois da tela dos Saves (Tela 02)
+    Jogar 
+    Créditos
+        Colocar QRCode do Live Pix pra quem quiser doar 
+        Voltar
+    Leveis (Pensando ainda se precisa fazer isso, por causa do save) - Se der tempo, dou uma atenção maior 
+        Voltar
+    Opções
+        Efeitos 
+        Musica
+        Voltar
+
+Arrumar o lado que o player olha ao retornar de um save 
+
+Fazer todo o fluxo entre os leveis
+
+
+------
+JOGAR O JOGO COMPLETO 
+
+TELAR 2 AMIGOS JOGANDO PRA VER AS REAÇÕES E APONTAR ERROS - Ser Crítico mesmo huahua
+------
+
+
 
 
 

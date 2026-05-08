@@ -196,6 +196,7 @@
     {"id":{"name":"scr_efeito_brilho","path":"scripts/scr_efeito_brilho/scr_efeito_brilho.yy",},},
     {"id":{"name":"scr_globais","path":"scripts/scr_globais/scr_globais.yy",},},
     {"id":{"name":"scr_macros","path":"scripts/scr_macros/scr_macros.yy",},},
+    {"id":{"name":"scr_saves","path":"scripts/scr_saves/scr_saves.yy",},},
     {"id":{"name":"scr_ScreenShake","path":"scripts/scr_ScreenShake/scr_ScreenShake.yy",},},
     {"id":{"name":"scr_transicao","path":"scripts/scr_transicao/scr_transicao.yy",},},
     {"id":{"name":"scribble_add_macro","path":"scripts/scribble_add_macro/scribble_add_macro.yy",},},

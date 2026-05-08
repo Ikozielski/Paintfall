@@ -2,8 +2,8 @@
 global.debug = false;
 
 //Deinir powerUp pra sempre 
-global.powerUp_tinta = true;
-global.powerUp_correr  = true;
+global.powerUp_tinta = false;
+global.powerUp_correr  = false;
 
 
 global.leveis = [ 
@@ -23,5 +23,9 @@ global.level_1_concluido = false;
 
 
 //Posição inicial do player 
-global.player_x = 528;
-global.player_y = 444;
+global.player_x = 712;
+global.player_y = 560;
+global.roomAtual = rm_mundo;
+
+
+global.saveAtual = 1;

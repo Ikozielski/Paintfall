@@ -289,10 +289,13 @@ troca_sprite = function (_sprite = spr_parede){
 
 //Criando um estado que o player não tem controle 
 estado_sem_controle = function (){
-    
+    transicao_sprites();
+    visible = false;
 }
 
 estado_parado = function (){
+    
+    visible = true;
     
     if(pulo_timer_atual == 0) velocidadeVertical = 0;
     velocidadeHorizontal = 0;

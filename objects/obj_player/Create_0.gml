@@ -289,6 +289,18 @@ troca_sprite = function (_sprite = spr_parede){
     }
 }
 
+estado_inicia_empurro = function (){
+    
+}
+
+estado_empurrando = function (){
+    
+}
+
+estado_finaliza_empurro = function (){
+    
+}
+
 //Criando um estado que o player não tem controle 
 estado_sem_controle = function (){
     transicao_sprites();

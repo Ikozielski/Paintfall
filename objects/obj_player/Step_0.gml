@@ -22,4 +22,3 @@ estado();
 
 //if (keyboard_check_pressed(ord("G"))) chaves++;
 
-show_debug_message(global.tutorialConcluido);

@@ -51,7 +51,7 @@ var _layer = layer_tilemap_get_id("tl_level");
 
 tileTinta = layer_tilemap_get_id("tl_tinta");
 
-colisoes = [obj_parede, _layer];
+colisoes = [obj_parede, _layer, obj_caixa];
 
 //Variaveis de Imput
 direita = 0;

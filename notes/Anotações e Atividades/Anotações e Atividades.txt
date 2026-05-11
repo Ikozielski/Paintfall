@@ -41,7 +41,7 @@ Parado pra pular (Setinha)
 Transição para o X
 Parado no X
 Transição pra pular (Setinha)
-----------------------------------------------------
+
 Parado pra pular (Setinha)
     Ele vai ficar parado por 1 segundo, na imagem 0 da sprite
     Depois de 1 segundo ele vai começar a transição para a imagem 8 da sprite 
@@ -53,6 +53,9 @@ Parado no X
     Depois ele roda a transição e volta para o estado da setinha pra cima
 
 
+--------------
+
+----------------------------------------------------
 Terminei as aulas 08/05/2026 - Agora vou fazer minhas próprias modificações, até o jogo ficar do jeito que quero
 Quero levar no máximo duas semanas pra implementar tudo isso - Provavelmente vou fazer mais coisas do que quero inicialmente
 mas vou anotanto aqui 
@@ -66,21 +69,23 @@ Inicio 08/05/2026 - Espero terminar no Máximo até 22/05/2026
 
 TODO: 
 
-Implementar espinhos, pra ser um desafio maior pro jogador 
+Implementar espinhos, pra ser um desafio maior pro jogador - OK
 
 Implementar a interação com a Caixa pra alcançar lugares maiores 
 
 Tutorial
     Adicionar e Explicar Sobre
         Caixa
-        Espinhos
+        Espinhos - OK
         Corrida
 
-Adicionar Músicas - Pensei em usar músicas do GC
+Músicas
+ - Pensei em usar músicas do GC
     Menu
         Efeitos
         Música 
     
+    Tomar dano
     Efeito Power Up 
     Efeito Ghosting  
     Porta abrindo 
@@ -123,7 +128,6 @@ Fazer tela de inicio depois da tela dos Saves (Tela 02)
 Arrumar o lado que o player olha ao retornar de um save 
 
 Fazer todo o fluxo entre os leveis
-
 
 ------
 JOGAR O JOGO COMPLETO 

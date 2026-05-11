@@ -16,6 +16,7 @@ powerUp = global.powerUp_tinta;
 chaves = 0;
 minhasChaves = [];
 gasteiChave = false;
+transicao_criada = false;
 teste = 0;
 //Variaveis do Coyote Jump
 coyote_timer = FPS * .1;
@@ -167,6 +168,7 @@ checaChao = function (){
     chaoTinta = place_meeting(x, y + 1, tileTinta)
 }
 
+
 pegaImput = function (){
     
     //Pegando Imputs
@@ -291,6 +293,23 @@ troca_sprite = function (_sprite = spr_parede){
 estado_sem_controle = function (){
     transicao_sprites();
     visible = false;
+}
+
+estado_morrendo = function (){
+    velocidadeHorizontal = 0;
+    velocidadeVertical = 0;
+    
+    ScreenShake(1.5);
+    
+    troca_sprite(spr_player_morrendo);
+    
+    if(acabou_animacao() && !transicao_criada){
+        image_speed = 0;
+        cria_transicao_inicia(room); 
+        transicao_criada = true; 
+        //show_debug_message(instance_number(obj_transicao));
+    } 
+    
 }
 
 estado_parado = function (){
@@ -521,9 +540,7 @@ estado_tinta_loop = function (){
     
     //Se na minha frente e embaixo de mim nao tiver chão, eu zero meu velh
     var _parar = !place_meeting(x + (sign(velocidadeHorizontal) * 10), y + 1, tileTinta);
-    if(_parar){
-        velocidadeHorizontal = 0;
-    }
+    if(_parar) velocidadeHorizontal = 0;
     
     if(poder){
         if (_obstaculoCima) exit; 

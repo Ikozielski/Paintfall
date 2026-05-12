@@ -1,9 +1,9 @@
 {
   "$GMSprite":"v2",
   "%Name":"spr_caixa",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":21,
-  "bbox_left":0,
+  "bbox_left":1,
   "bbox_right":22,
   "bbox_top":0,
   "collisionKind":1,

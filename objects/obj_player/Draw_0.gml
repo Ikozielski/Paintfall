@@ -3,11 +3,9 @@ draw_sprite_ext(sprite_index, image_index, x, y, xscale * direcao, yscale, image
 
 desenha_efeito_brilho();
 
-draw_text(x, y, global.powerUp_tinta);
+draw_text(x, y, global.powerUp_correr);
 
-var _alvo = place_meeting(x + (sign(velocidadeHorizontal) * 15), y, obj_caixa);
 
-show_debug_message(_alvo);
 
 
 

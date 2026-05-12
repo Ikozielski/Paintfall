@@ -3,7 +3,7 @@ global.debug = false;
 
 //Deinir powerUp pra sempre 
 global.powerUp_tinta = false;
-global.powerUp_correr  = false;
+global.powerUp_correr  = true;
 
 
 global.leveis = [ 

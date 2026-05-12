@@ -51,7 +51,7 @@ var _layer = layer_tilemap_get_id("tl_level");
 
 tileTinta = layer_tilemap_get_id("tl_tinta");
 
-colisoes = [obj_parede, _layer, obj_caixa];
+colisoes = [obj_parede, _layer];
 
 //Variaveis de Imput
 direita = 0;
@@ -291,14 +291,83 @@ troca_sprite = function (_sprite = spr_parede){
 
 estado_inicia_empurro = function (){
     
+    velocidadeHorizontal = 0
+    velocidadeVertical = 0;
+    troca_sprite(spr_player_inicia_empurro);
+    
+    if (acabou_animacao()){
+         estado = estado_empurrando;
+    }
+    
 }
 
 estado_empurrando = function (){
     
+    velocidadeHorizontal = (direita - esquerda) * velocidadeHorizontalMaxima;
+    
+    troca_sprite(spr_player_empurrando);
+    velocidadeVertical = 0;
+    
+    //if(esquerda){
+        //hspeed = direcao;
+    //}
+    
+    
+     if(instance_exists(caixa_empurrando)){
+        
+        if(velocidadeHorizontal != 0){ 
+            caixa_empurrando.hspeed = direcao / 4;
+            velocidadeHorizontal = direcao / 4;  
+        } else{
+            caixa_empurrando.hspeed = 0;
+        }
+        
+    } else{
+        
+        estado = estado_parado;
+    }
+    
+    if(place_meeting(x, y + 1, colisoes)){
+        return;   
+    }
+        
+       
+    
+         //if (sign(velocidadeHorizontal) != direcao || velocidadeHorizontal == 0){
+            //caixa_empurrando.hspeed = 0;
+         //} 
+    
+         estado = estado_finaliza_empurro;
+         
 }
 
 estado_finaliza_empurro = function (){
     
+    velocidadeHorizontal = 0;
+    x = 250;
+    y = 48;
+        
+    
+    troca_sprite(spr_player_finaliza_empurro);
+    caixa_empurrando.hspeed = 0;
+    
+    if (sprite_index != spr_player_finaliza_empurro)
+    {
+        troca_sprite(spr_player_finaliza_empurro);
+        image_speed = 1;
+        image_index = 0;
+    }
+
+    if (instance_exists(caixa_empurrando))
+    {
+        caixa_empurrando.hspeed = 0;
+    }
+
+    if (acabou_animacao())
+    {
+        estado = estado_parado;
+       
+    }
 }
 
 //Criando um estado que o player não tem controle 

@@ -412,15 +412,14 @@ estado_finaliza_empurro = function (){
         //image_index = 0;
     //}
     
-    
     if (acabou_animacao()) {
-        troca_sprite(spr_player_idle);
-        
+        //troca_sprite(spr_player_idle);
         
         //Empurrando o player um pouquinho pra trás 
         x -= direcao  * 1.5;
         velocidadeHorizontal = 0;
-        estado = estado_parado;
+        troca_estado(estado_parado, [spr_player_finaliza_empurro, spr_player_idle]);
+        //estado = estado_parado;
        
     }
 }

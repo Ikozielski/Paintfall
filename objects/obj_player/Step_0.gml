@@ -13,15 +13,13 @@ if(global.powerUp_correr) ativa_correr();
     
 caixa_empurrando = instance_place(x + (direcao * 5), y, obj_caixa);
 
-if(caixa_empurrando && velocidadeHorizontal != 0 && estado != estado_inicia_empurro && estado != estado_empurrando){
+if(caixa_empurrando && velocidadeHorizontal != 0 && chao && estado != estado_inicia_empurro && estado != estado_empurrando){
     
     
    // direcao_empurro = sign(velocidadeHorizontal);
     estado = estado_inicia_empurro;
 } 
     
-show_debug_message(estado);
-
 estado();
 
 

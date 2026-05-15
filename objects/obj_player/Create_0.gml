@@ -17,6 +17,9 @@ chaves = 0;
 minhasChaves = [];
 gasteiChave = false;
 transicao_criada = false;
+caixa_empurrando = noone;
+
+
 teste = 0;
 //Variaveis do Coyote Jump
 coyote_timer = FPS * .1;
@@ -302,69 +305,121 @@ estado_inicia_empurro = function (){
 }
 
 estado_empurrando = function (){
+
+    var input = direita - esquerda;
     
-    velocidadeHorizontal = (direita - esquerda) * velocidadeHorizontalMaxima;
-    
+    velocidadeHorizontal = input * velocidadeHorizontalMaxima;
+
     troca_sprite(spr_player_empurrando);
     velocidadeVertical = 0;
-    
-    //if(esquerda){
-        //hspeed = direcao;
-    //}
-    
-    
-     if(instance_exists(caixa_empurrando)){
-        
-        if(velocidadeHorizontal != 0){ 
-            caixa_empurrando.hspeed = direcao / 4;
-            velocidadeHorizontal = direcao / 4;  
+
+    if(instance_exists(caixa_empurrando)){
+
+            
+        if(velocidadeHorizontal != 0){
+
+        var mov = velocidadeHorizontal / 4;
+
+        caixa_empurrando.hspeed = mov;
+        velocidadeHorizontal = mov;
+
         } else{
-            caixa_empurrando.hspeed = 0;
+               caixa_empurrando.hspeed = 0;
         }
         
     } else{
         
-        estado = estado_parado;
     }
     
-    if(place_meeting(x, y + 1, colisoes)){
-        return;   
-    }
+     // apertou direção contrária
+    if(input != 0 && sign(input) != direcao){
         
-       
+        if(instance_exists(caixa_empurrando)){
+            caixa_empurrando.hspeed = 0;
+            velocidadeHorizontal = 0;
+            estado = estado_finaliza_empurro;
+            
+    }
+   
+        
+        //estado = estado_finaliza_empurro;
+        return;
+
+        //caixa_empurrando.hspeed = 0;
+        //estado = estado_finaliza_empurro;
+        //return;
+    }
+
+    if(place_meeting(x, y + 1, colisoes)){
+        return;
+    }
     
-         //if (sign(velocidadeHorizontal) != direcao || velocidadeHorizontal == 0){
-            //caixa_empurrando.hspeed = 0;
-         //} 
     
-         estado = estado_finaliza_empurro;
-         
+
+    //estado = estado_finaliza_empurro;
 }
+
+//estado_empurrando = function (){
+    //
+    //velocidadeHorizontal = (direita - esquerda) * velocidadeHorizontalMaxima;
+    //
+    //troca_sprite(spr_player_empurrando);
+    //velocidadeVertical = 0;
+    //
+    ////if(esquerda){
+        ////hspeed = direcao;
+    ////}
+    //
+    //var _movimento_caixa = sign(velocidadeHorizontal) / 4;
+    //
+     //if(instance_exists(caixa_empurrando)){
+        //
+        //if(velocidadeHorizontal != 0){ 
+            //caixa_empurrando.hspeed = _movimento_caixa;
+            //velocidadeHorizontal = _movimento_caixa;
+        //} else{
+            //caixa_empurrando.hspeed = 0;
+        //}
+        //
+    //} else{
+        //
+        //estado = estado_parado;
+    //}
+    //
+    //if(place_meeting(x, y + 1, colisoes)){
+        //return;   
+    //}
+         ////if (sign(velocidadeHorizontal) != direcao || velocidadeHorizontal == 0){
+            ////caixa_empurrando.hspeed = 0;
+         ////} 
+         //estado = estado_finaliza_empurro;
+//}
 
 estado_finaliza_empurro = function (){
     
-    velocidadeHorizontal = 0;
-    x = 250;
-    y = 48;
-        
-    
+    //if(instance_exists(caixa_empurrando)) caixa_empurrando.hspeed = 0;
+   
     troca_sprite(spr_player_finaliza_empurro);
-    caixa_empurrando.hspeed = 0;
+    //caixa_empurrando.hspeed = 0;
+   
+    //if (sprite_index != spr_player_finaliza_empurro)
+    //{
+        ////
+        ////
+        ////
+        //troca_sprite(spr_player_finaliza_empurro);
+        //image_speed = 1;
+        //image_index = 0;
+    //}
     
-    if (sprite_index != spr_player_finaliza_empurro)
-    {
-        troca_sprite(spr_player_finaliza_empurro);
-        image_speed = 1;
-        image_index = 0;
-    }
-
-    if (instance_exists(caixa_empurrando))
-    {
-        caixa_empurrando.hspeed = 0;
-    }
-
-    if (acabou_animacao())
-    {
+    
+    if (acabou_animacao()) {
+        troca_sprite(spr_player_idle);
+        
+        
+        //Empurrando o player um pouquinho pra trás 
+        x -= direcao  * 1.5;
+        velocidadeHorizontal = 0;
         estado = estado_parado;
        
     }

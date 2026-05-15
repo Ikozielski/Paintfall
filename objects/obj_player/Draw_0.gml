@@ -3,7 +3,7 @@ draw_sprite_ext(sprite_index, image_index, x, y, xscale * direcao, yscale, image
 
 desenha_efeito_brilho();
 
-draw_text(x, y, global.powerUp_correr);
+draw_text(x, y, velocidadeHorizontal);
 
 
 

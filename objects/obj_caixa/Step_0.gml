@@ -1,0 +1,1 @@
+ //if(!chao) obj_player.caixa_empurrando.hspeed = 0;

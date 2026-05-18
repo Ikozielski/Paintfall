@@ -1,1 +1,3 @@
- //if(!chao) obj_player.caixa_empurrando.hspeed = 0;
+parede = place_meeting(x, y, colisoes);
+
+if(parede) podeAndar = false;

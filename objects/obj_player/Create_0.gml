@@ -54,7 +54,7 @@ var _layer = layer_tilemap_get_id("tl_level");
 
 tileTinta = layer_tilemap_get_id("tl_tinta");
 
-colisoes = [obj_parede, _layer];
+colisoes = [obj_parede, _layer, obj_caixa];
 
 //Variaveis de Imput
 direita = 0;
@@ -316,7 +316,7 @@ estado_empurrando = function (){
     if(instance_exists(caixa_empurrando)){
 
             
-        if(velocidadeHorizontal != 0){
+        if(velocidadeHorizontal != 0 && caixa_empurrando.podeAndar){
 
         var mov = velocidadeHorizontal / 4;
 
@@ -325,6 +325,7 @@ estado_empurrando = function (){
 
         } else{
                caixa_empurrando.hspeed = 0;
+                velocidadeHorizontal = 0;
         }
         
     } else{

@@ -1,8 +1,9 @@
-//chao = noone;
-//chaoTinta = noone;
-//
-//
-//chao = place_meeting(x + obj_player.direcao, y + 1, obj_player.colisoes)
-    //
-//chaoTinta = place_meeting(x, y + 1, obj_player.tileTinta)
-    //
+chao = noone;
+chaoTinta = noone;
+podeAndar = true;
+lado = sign(hspeed);
+
+var _layer = layer_tilemap_get_id("tl_level");
+
+colisoes = [obj_parede, _layer];
+

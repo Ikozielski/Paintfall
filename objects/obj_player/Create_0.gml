@@ -317,9 +317,9 @@ estado_empurrando = function (){
 
             
         if(velocidadeHorizontal != 0 && caixa_empurrando.podeAndar){
-
+            
         var mov = velocidadeHorizontal / 4;
-
+            
         caixa_empurrando.hspeed = mov;
         velocidadeHorizontal = mov;
 

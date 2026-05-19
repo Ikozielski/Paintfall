@@ -1,4 +1,4 @@
-if keyboard_check_pressed(ord("R")) {
+if (instance_exists(obj_player) && keyboard_check_pressed(ord("R"))) {
     cria_transicao_inicia(room);
     resetarGlobais();
 }
@@ -10,3 +10,4 @@ if(keyboard_check_pressed(vk_f11)){
     //Tocando entre tela cheia ou não 
     window_set_fullscreen(!_tela_cheia);
 }
+

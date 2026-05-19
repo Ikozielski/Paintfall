@@ -111,7 +111,7 @@ Melhorar a Tela dos Saves (Tela 01)
     Colocar uma animação para o nome do jogo (PaintFall)
     Colocar uma lixeira pra poder deletar o save - OK
         Com pop-up pra confirmar  - OK 
-    Informar o jogador que o save foi excluído 
+    Informar o jogador que o save foi excluído - OK 
     
 
 Fazer tela de inicio depois da tela dos Saves (Tela 02)

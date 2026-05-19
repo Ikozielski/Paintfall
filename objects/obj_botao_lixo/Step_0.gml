@@ -47,3 +47,4 @@ if(_mouse_sobre){
         image_speed = 0;    
     }
 }
+

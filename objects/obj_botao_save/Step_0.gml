@@ -20,7 +20,9 @@ if(_mouse_sobre){
          carregar_save_jogo();
        
          //Crio transição pra room destino 
-        cria_transicao_inicia(global.roomAtual);
+         cria_transicao_inicia(global.roomAtual);
+        
+        
         
     }
   

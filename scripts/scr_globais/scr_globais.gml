@@ -28,4 +28,9 @@ global.player_y = 96;    //Inicio 96
 global.roomAtual = rm_mundo;
 
 
+
+
 global.saveAtual = 2;
+
+global.save_excluido = 0;
+

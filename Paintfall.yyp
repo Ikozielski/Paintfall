@@ -119,6 +119,7 @@
     {"id":{"name":"READ ME","path":"notes/READ ME/READ ME.yy",},},
     {"id":{"name":"obj_andaime","path":"objects/obj_andaime/obj_andaime.yy",},},
     {"id":{"name":"obj_botao_lixo","path":"objects/obj_botao_lixo/obj_botao_lixo.yy",},},
+    {"id":{"name":"obj_botao_menu","path":"objects/obj_botao_menu/obj_botao_menu.yy",},},
     {"id":{"name":"obj_botao_popup","path":"objects/obj_botao_popup/obj_botao_popup.yy",},},
     {"id":{"name":"obj_botao_save","path":"objects/obj_botao_save/obj_botao_save.yy",},},
     {"id":{"name":"obj_caixa_dialogo","path":"objects/obj_caixa_dialogo/obj_caixa_dialogo.yy",},},
@@ -360,9 +361,9 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_Tela_Inicial","path":"rooms/rm_Tela_Inicial/rm_Tela_Inicial.yy",},},
+    {"roomId":{"name":"rm_tutorial_3","path":"rooms/rm_tutorial_3/rm_tutorial_3.yy",},},
     {"roomId":{"name":"rm_mundo","path":"rooms/rm_mundo/rm_mundo.yy",},},
     {"roomId":{"name":"rm_tutorial_1","path":"rooms/rm_tutorial_1/rm_tutorial_1.yy",},},
-    {"roomId":{"name":"rm_tutorial_3","path":"rooms/rm_tutorial_3/rm_tutorial_3.yy",},},
     {"roomId":{"name":"rm_level_1_fase_3","path":"rooms/rm_level_1_fase_3/rm_level_1_fase_3.yy",},},
     {"roomId":{"name":"rm_level_1_fase_1","path":"rooms/rm_level_1_fase_1/rm_level_1_fase_1.yy",},},
     {"roomId":{"name":"rm_level_1_fase_2","path":"rooms/rm_level_1_fase_2/rm_level_1_fase_2.yy",},},

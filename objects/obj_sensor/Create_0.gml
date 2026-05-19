@@ -6,6 +6,7 @@ metodo_define_posicao_player = function (_player){
     global.player_x = destino_x;
     global.player_y = destino_y;
     
+    
     instance_destroy();
 }
 

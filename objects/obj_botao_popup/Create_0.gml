@@ -10,6 +10,7 @@ botao_y = y;
 
 save = 0;
 
+
 cancela_animacao = function (){
     
     if(instance_exists(botao_lixo)){ 
@@ -17,5 +18,5 @@ cancela_animacao = function (){
             botao_lixo.image_speed = 0; 
             botao_lixo.image_alpha = .6;
         }
-            instance_destroy();
+           
 }

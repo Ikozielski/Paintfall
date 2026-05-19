@@ -13,7 +13,7 @@ if(_mouse_sobre){
         //Defino save atual
         global.saveAtual = save;
         
-         //Deleta o Save 
+        //Deleta o Save 
         //file_delete("save1.json");
         
          //Carrego o Jogo
@@ -24,9 +24,7 @@ if(_mouse_sobre){
         
     }
   
-    
-    
 } else{
     image_alpha = .6;
-    sprite = spr_player_idle;
+    sprite = spr_vazio;
 }

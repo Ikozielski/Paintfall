@@ -4,6 +4,7 @@ if(!colidi_player){
     
     colidi_player = true;
     
-    //Salvando o jogo
-    salvar_jogo();
+    global.powerUp_tinta = false;
+    global.powerUp_correr = false;
+    
 }

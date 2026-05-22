@@ -677,6 +677,11 @@ estado_tinta_loop = function (){
     //Se na minha frente e embaixo de mim nao tiver chão, eu zero meu velh
     var _parar = !place_meeting(x + (sign(velocidadeHorizontal) * 10), y + 1, tileTinta);
     if(_parar) velocidadeHorizontal = 0;
+        
+    
+    if(caixa_empurrando){
+        x = x + (24 * direcao);
+    }
     
     if(poder){
         if (_obstaculoCima) exit; 

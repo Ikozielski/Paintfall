@@ -8,3 +8,5 @@ if (alvo){
     }
      
 }
+
+if(powerUp == "powerUp_correr") image_blend = c_aqua;

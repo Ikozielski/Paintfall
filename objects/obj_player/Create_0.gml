@@ -747,6 +747,9 @@ rodaDebug = function (){
     dbg_slider(ref_create(id, "velocidadeAndando"), 0, 3, "Velocidade Andando", .1);
     dbg_slider(ref_create(id, "velocidadeCorrendo"), 0, 4, "Velocidade Correndo", .2);
     
+    global.powerUp_correr = true;
+    global.powerUp_tinta = true;
+    
 }
 
 ativaDebug = function (){

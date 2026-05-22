@@ -49,6 +49,8 @@ estado_aberta = function (){
     
     x = xstart;
     
+    instance_destroy();
+    
     //part_system_destroy(ps);
 }
 

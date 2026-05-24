@@ -20,6 +20,7 @@ transicao_criada = false;
 caixa_empurrando = noone;
 
 
+
 teste = 0;
 //Variaveis do Coyote Jump
 coyote_timer = FPS * .1;
@@ -313,24 +314,21 @@ estado_empurrando = function (){
     troca_sprite(spr_player_empurrando);
     velocidadeVertical = 0;
 
-    if(instance_exists(caixa_empurrando)){
-
-            
+        if(instance_exists(caixa_empurrando)){
+    
         if(velocidadeHorizontal != 0 && caixa_empurrando.podeAndar){
             
         var mov = velocidadeHorizontal / 4;
             
         caixa_empurrando.hspeed = mov;
         velocidadeHorizontal = mov;
-
+            
         } else{
                caixa_empurrando.hspeed = 0;
                 velocidadeHorizontal = 0;
         }
-        
-    } else{
-        
     }
+    
     
      // apertou direção contrária
     if(input != 0 && sign(input) != direcao){
@@ -359,6 +357,7 @@ estado_empurrando = function (){
 
     //estado = estado_finaliza_empurro;
 }
+
 
 //estado_empurrando = function (){
     //

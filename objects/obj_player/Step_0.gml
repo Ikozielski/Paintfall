@@ -13,6 +13,7 @@ if(global.powerUp_correr) ativa_correr();
     
 caixa_empurrando = instance_place(x + (direcao * 5), y, obj_caixa);
 
+
 if(caixa_empurrando && (estado != estado_tinta_loop) && velocidadeHorizontal != 0 && chao && estado != estado_inicia_empurro && estado != estado_empurrando){
     
     

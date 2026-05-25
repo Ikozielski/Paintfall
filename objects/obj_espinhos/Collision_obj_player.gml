@@ -1,3 +1,4 @@
 
-
-other.estado = other.estado_morrendo;
+if(!other.podePassar){
+    other.estado = other.estado_morrendo;
+}

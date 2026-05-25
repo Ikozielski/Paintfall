@@ -18,6 +18,7 @@ minhasChaves = [];
 gasteiChave = false;
 transicao_criada = false;
 caixa_empurrando = noone;
+podePassar = false;
 
 
 
@@ -436,6 +437,9 @@ estado_morrendo = function (){
     
     ScreenShake(1.5);
     
+    global.powerUp_correr = false;
+    global.powerUp_tinta = false;
+    
     troca_sprite(spr_player_morrendo);
     
     if(acabou_animacao() && !transicao_criada){
@@ -664,6 +668,8 @@ estado_tinta_loop = function (){
     
     aplicaVelocidade();
     
+    var _espinhos = place_meeting(x + (direcao * 10), y, obj_espinhos);
+    
     //Não poder pular quando estou no tinta loop
     velocidadeVertical = 0;
     
@@ -681,6 +687,14 @@ estado_tinta_loop = function (){
     if(caixa_empurrando){
         x = x + (24 * direcao);
     }
+    
+    if(_espinhos){
+        x = x + (20 * direcao);
+        podePassar = true;
+    } else{
+        podePassar = false;
+    }
+    
     
     if(poder){
         if (_obstaculoCima) exit; 

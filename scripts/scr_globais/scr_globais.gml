@@ -20,6 +20,7 @@ global.faseAtual = 0;
 //Globais fases
 global.tutorialConcluido = false;
 global.level_1_concluido = false;
+global.level_2_concluido = false;
 
 
 //Posição inicial do player 

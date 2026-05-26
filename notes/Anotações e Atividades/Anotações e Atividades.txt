@@ -77,7 +77,7 @@ Tutorial
     Adicionar e Explicar Sobre
         Caixa  - OK 
         Espinhos - OK
-        Corrida
+        Corrida - OK
 
 Músicas
  - Pensei em usar músicas do GC
@@ -104,7 +104,7 @@ Músicas
 Fazer os leveis 2 e 3 do jogo (Cada um com 3 fases)
     Quero usar a mecânica do ghosting nessas fases, além de colocar os espínhos e as caixas (não quero mexer no lvl 1)
     Foco das fases 
-        2: Velocidade 
+        2: Velocidade - OK 
         3: Tudo 
     
 Melhorar a Tela dos Saves (Tela 01)
@@ -114,7 +114,7 @@ Melhorar a Tela dos Saves (Tela 01)
     Informar o jogador que o save foi excluído - OK 
     
 
-Fazer tela de inicio depois da tela dos Saves (Tela 02)
+Fazer tela de inicio depois da tela dos Saves (Tela 02) - Não fiz
     Jogar 
     Créditos
         Colocar QRCode do Live Pix pra quem quiser doar 
@@ -129,6 +129,9 @@ Fazer tela de inicio depois da tela dos Saves (Tela 02)
 Arrumar o lado que o player olha ao retornar de um save 
 
 Fazer todo o fluxo entre os leveis
+
+Fazer uma tela final, depois da fase 3 do Level 3 
+
 
 ------
 JOGAR O JOGO COMPLETO 

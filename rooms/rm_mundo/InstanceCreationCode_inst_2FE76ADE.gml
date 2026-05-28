@@ -14,3 +14,8 @@ if(global.level_2_concluido){
         global.powerUp_tinta = true;
 }
 
+if(global.level_3_concluido){
+        direcao = -1;
+        global.powerUp_correr = true;
+        global.powerUp_tinta = true;
+}

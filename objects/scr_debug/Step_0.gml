@@ -1,0 +1,1 @@
+//No step do Obj você roda o ativaDebug();

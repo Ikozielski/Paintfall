@@ -88,8 +88,8 @@
   ],
   "name":"rm_Tela_Inicial",
   "parent":{
-    "name":"Tela Inicial",
-    "path":"folders/Rooms/Tela Inicial.yy",
+    "name":"Tela Inicial - Final",
+    "path":"folders/Rooms/Tela Inicial - Final.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

@@ -53,6 +53,7 @@
     {"name":"inst_715F319B","path":"rooms/rm_level_3_fase_1/rm_level_3_fase_1.yy",},
     {"name":"inst_1B3AAC7B","path":"rooms/rm_level_3_fase_1/rm_level_3_fase_1.yy",},
     {"name":"inst_4C8D88CB","path":"rooms/rm_level_3_fase_1/rm_level_3_fase_1.yy",},
+    {"name":"inst_25E2D47C","path":"rooms/rm_level_3_fase_1/rm_level_3_fase_1.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -118,6 +119,9 @@
         {"$GMRInstance":"v4","%Name":"inst_4AFC06EC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4AFC06EC","objectId":{"name":"obj_muda_level","path":"objects/obj_muda_level/obj_muda_level.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_muda_level","path":"objects/obj_muda_level/obj_muda_level.yy",},"propertyId":{"name":"destino","path":"objects/obj_muda_level/obj_muda_level.yy",},"resource":{"name":"rm_level_3_fase_2","path":"rooms/rm_level_3_fase_2/rm_level_3_fase_2.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"rm_level_3_fase_2",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-16.0,"y":304.0,},
+        {"$GMRInstance":"v4","%Name":"inst_25E2D47C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_25E2D47C","objectId":{"name":"obj_placa","path":"objects/obj_placa/obj_placa.yy",},"properties":[
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_placa","path":"objects/obj_placa/obj_placa.yy",},"propertyId":{"name":"texto","path":"objects/obj_placa/obj_placa.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"Se estiver estressado, [rainbow][wave] RESPIRE\"",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":160.0,"y":80.0,},
       ],"layers":[],"name":"Level","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Dados","depth":500,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":8,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Dados","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Enfeites","depth":600,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[

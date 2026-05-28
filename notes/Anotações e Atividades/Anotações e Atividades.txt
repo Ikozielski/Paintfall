@@ -101,11 +101,11 @@ Músicas
     
 
     
-Fazer os leveis 2 e 3 do jogo (Cada um com 3 fases)
+Fazer os leveis 2 e 3 do jogo (Cada um com 3 fases) - OK
     Quero usar a mecânica do ghosting nessas fases, além de colocar os espínhos e as caixas (não quero mexer no lvl 1)
     Foco das fases 
         2: Velocidade - OK 
-        3: Tudo 
+        3: Tudo  - OK
     
 Melhorar a Tela dos Saves (Tela 01)
     Colocar uma animação para o nome do jogo (PaintFall)
@@ -126,11 +126,15 @@ Fazer tela de inicio depois da tela dos Saves (Tela 02) - Não fiz
         Musica
         Voltar
 
+Fazer uma tela final (CRÉDITOS), depois da fase 3 do Level 3 - OK
+
+Exportar DEBUG Package - OK
+
 Arrumar o lado que o player olha ao retornar de um save 
 
-Fazer todo o fluxo entre os leveis
+Fazer todo o fluxo entre os leveis - OK Demorei 25 Minutos para zerar
 
-Fazer uma tela final, depois da fase 3 do Level 3 
+
 
 
 ------

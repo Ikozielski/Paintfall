@@ -3,6 +3,10 @@
 //Vou fazer o meu Y sem mais ou menos igual ao Y do alvo 
 
 
+if (seguePlayer) {
+    depth = alvo.depth - 1;
+}
+
 if(abrindoPorta){
     //Meu código de ir até a porta e abrir ela 
       
@@ -20,6 +24,7 @@ if(abrindoPorta){
         porta_alvo.estado = porta_alvo.estado_abrindo;
         obj_player.gasteiChave = false;
         ScreenShake(20);
+        obj_player.play_audio(sfx_porta4 ,2 ,0);
         instance_destroy();
     }
     

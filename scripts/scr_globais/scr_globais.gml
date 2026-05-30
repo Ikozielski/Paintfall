@@ -36,3 +36,7 @@ global.saveAtual = 2;
 
 global.save_excluido = 0;
 
+
+//Som
+global.musica_atual = -1;
+global.sfx_atual = -1;

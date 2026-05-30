@@ -1,0 +1,31 @@
+{
+  "$GMSound":"v2",
+  "%Name":"msc_level2",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "ConfigValues":{
+    "modo_debug":{
+      "audioGroupId":"{ \"name\":\"audio_group_musicas\", \"path\":\"audiogroups/audio_group_musicas\" }",
+    },
+  },
+  "conversionMode":0,
+  "duration":120.21699,
+  "exportDir":"",
+  "name":"msc_level2",
+  "parent":{
+    "name":"Musics",
+    "path":"folders/Sounds/Musics.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"msc_level2.ogg",
+  "volume":0.05,
+}

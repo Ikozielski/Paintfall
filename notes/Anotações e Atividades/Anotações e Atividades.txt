@@ -85,16 +85,29 @@ Músicas
         Efeitos
         Música 
     
-    Tomar dano
-    Efeito Power Up 
-    Efeito Ghosting  
-    Porta abrindo 
-    Pegar Chave
-    Música Tutorial 
-    Música Fases 
-        1
-        2
-        3
+    Efeitos
+         Tomar dano - OK2
+         Efeito Power Up - OK2
+         Efeito Ghosting  - OK2
+         Porta abrindo - OK2
+         Pegar Chave - OK2
+         Entrar na tinta
+         Se mover na tinta
+         Sair da tinta
+        
+        Acho irritante mas sem parece pior:
+            Passos
+            Pulo 
+
+    Musicas
+         Música Tutorial - OK2
+         Mapa do Mundo - OK2
+         Saves / Menu - OK2
+         Créditos  - OK2
+         Música Fases 
+             1  - OK2 
+             2  - OK2
+             3  - OK2
     Talvez (ou não)
         Efeito empurrando a caixa
         Pulando (acho que esse realmente não, muito chato)

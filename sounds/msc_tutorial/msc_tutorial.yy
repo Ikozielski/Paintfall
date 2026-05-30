@@ -1,0 +1,31 @@
+{
+  "$GMSound":"v2",
+  "%Name":"msc_tutorial",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "ConfigValues":{
+    "modo_debug":{
+      "audioGroupId":"{ \"name\":\"audio_group_musicas\", \"path\":\"audiogroups/audio_group_musicas\" }",
+    },
+  },
+  "conversionMode":0,
+  "duration":104.90497,
+  "exportDir":"",
+  "name":"msc_tutorial",
+  "parent":{
+    "name":"Musics",
+    "path":"folders/Sounds/Musics.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"msc_tutorial.ogg",
+  "volume":0.05,
+}

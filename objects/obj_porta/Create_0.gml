@@ -19,7 +19,7 @@ part_type_blend(ptype1, true);
 part_type_life(ptype1, 20, 40);
 
 
-estado_abrindo = function (){
+estado_abrindo = function (){ 
    vspeed = -.3;
     
     ScreenShake(3);
@@ -31,6 +31,8 @@ estado_abrindo = function (){
         //ps = part_system_create(ps_porta_subindo);
         //part_system_position(ps, x, y - sprite_height / 2);
     //}
+    
+    
     
     //Criar particula por código
     var _x = x + random_range(-sprite_width / 1.5, sprite_width / 1.5);

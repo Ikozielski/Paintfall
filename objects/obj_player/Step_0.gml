@@ -9,6 +9,7 @@ retorna_efeito_brilho(.01);
 removendo_colisao_one_way();
 coyote_jump();
 bufferPulo();
+estadoTintaSom();
 if(global.powerUp_correr) ativa_correr();
     
 caixa_empurrando = instance_place(x + (direcao * 5), y, obj_caixa);
@@ -21,6 +22,7 @@ if(caixa_empurrando && (estado != estado_tinta_loop) && velocidadeHorizontal != 
     estado = estado_inicia_empurro;
 } 
     
+
 estado();
 
 

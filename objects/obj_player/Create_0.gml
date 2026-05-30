@@ -19,7 +19,13 @@ gasteiChave = false;
 transicao_criada = false;
 caixa_empurrando = noone;
 podePassar = false;
+colidiuEspinhos = false;
+pulouAgora = false;
 
+//Som
+tinta_sfx_id = noone;
+tinta_entrou_som = false;
+tinta_saiu_som = false;
 
 
 teste = 0;
@@ -207,6 +213,15 @@ pega_powerUp = function (){
    
     estado = estado_powerUp_inicio;
     //if(acabou_animacao()) other.instance_destroy();
+}
+
+//Audio
+function play_audio(_audio, _prioridade = 0, _loops = 0, _ganho = undefined, _offset = undefined, _pitch = undefined, _listener_mask = undefined){
+	
+    if(global.sfx_atual != noone){
+        audio_stop_sound(global.sfx_atual);
+    }
+    global.sfx_atual = audio_play_sound(_audio, _prioridade, _loops, _ganho,_offset, _pitch, _listener_mask);
 }
 
 passaPorta = function (){
@@ -440,6 +455,7 @@ estado_morrendo = function (){
     global.powerUp_correr = false;
     global.powerUp_tinta = false;
     
+    
     troca_sprite(spr_player_morrendo);
     
     if(acabou_animacao() && !transicao_criada){
@@ -473,6 +489,7 @@ estado_parado = function (){
     
     //Pulei
     if(jump || pulo_timer_atual) {
+        play_audio(sfx_pulo, 1, 0);
         troca_estado(estado_pulando, [spr_player_jump_inicia, spr_player_pulo_cima]);
         
         criaParticulasProfundidade(x, y, depth - 1, obj_particula_pulo);
@@ -488,6 +505,7 @@ estado_parado = function (){
 }
 
 estado_movendo = function (){
+    
     aplicaVelocidade();
     
     transicao_sprites();
@@ -502,12 +520,16 @@ estado_movendo = function (){
     }
     
     if(jump){ 
+        play_audio(sfx_pulo, 1, 0);
         troca_estado(estado_pulando, [spr_player_jump_inicia, spr_player_pulo_cima]);
         criaParticulasProfundidade(x, y, depth - 1, obj_particula_pulo);
         efeito_squash(.4, 1.6);
     }
     
-    if(!chao) estado = estado_pulando;
+    if(!chao){
+        
+        estado = estado_pulando;
+    }
     
     if(poder && global.powerUp_tinta && chaoTinta){
         estado = estado_tinta_entrar;
@@ -529,10 +551,17 @@ estado_pulando = function (){
     if(coyote_timer_atual >= 0 && jump){
         velocidadeVertical = -velocidadeVerticalMaxima;
         
+        
         coyote_timer_atual = 0;
         
+        pulouAgora = true;
         criaParticulasProfundidade(x, y, depth - 1, obj_particula_pulo);
         efeito_squash(.4, 1.6);
+        
+        if(pulouAgora){
+             play_audio(sfx_pulo, 2, 0); 
+             pulouAgora = false; 
+        } 
         
     }
     
@@ -583,6 +612,8 @@ estado_pulando = function (){
         }
         
         if(_parar) velocidadeVertical = 0;
+            
+        
     }
     
     
@@ -664,6 +695,8 @@ estado_powerUp_fim = function (){
 }
 
 estado_tinta_loop = function (){
+    
+     
     transicao_sprites();
     
     aplicaVelocidade();
@@ -709,6 +742,8 @@ estado_tinta_loop = function (){
 //Entrando no estado loop da tinta 
 estado_tinta_entrar = function (){
     
+    audio_group_set_gain(audio_group_musicas, 0.3, 0.3);
+   
     velocidadeHorizontal = 0;
     troca_sprite(spr_player_tinta_entrar);
     
@@ -727,7 +762,8 @@ estado_tinta_entrar = function (){
 
 estado_tinta_sair = function (){
     
-    
+    audio_group_set_gain(audio_group_musicas, 1, 0.3);
+     
     velocidadeHorizontal = 0;
     mask_index = spr_player_idle;
     
@@ -737,6 +773,45 @@ estado_tinta_sair = function (){
     }
     transicao_sprites();
     
+}
+
+estadoTintaSom = function(){
+    
+    switch (estado) {
+
+    case estado_tinta_entrar:
+        if(!tinta_entrou_som){
+            audio_play_sound(sfx_entrarTinta, 1, false);
+            tinta_entrou_som = true;
+        }
+        
+        break;
+
+    case estado_tinta_loop:
+        
+        tinta_entrou_som = false;
+        tinta_saiu_som = false;
+        
+        if (tinta_sfx_id == noone) {
+            tinta_sfx_id = audio_play_sound(sfx_tintaLoop, 1, true);
+        }
+        break;
+
+    case estado_tinta_sair:
+        if(!tinta_saiu_som){
+            tinta_saiu_som = true;
+            
+            
+             if (tinta_sfx_id != noone) {
+                 audio_stop_sound(tinta_sfx_id);
+                 tinta_sfx_id = noone;
+             }
+            
+            audio_play_sound(sfx_entrarTinta, 1, false);
+        }
+        
+        break;
+    }
 }
 
 

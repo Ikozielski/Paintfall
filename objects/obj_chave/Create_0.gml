@@ -3,6 +3,7 @@ seguePlayer = false;
 alvo = noone;
 abrindoPorta = false;
 porta_alvo = noone;
+coletada = false;
 
 numeroChaves = 0;
 

@@ -7,6 +7,8 @@ if(alvo == noone){
     //Defino o meu alvo
     alvo = other.id;
     
+    other.play_audio(sfx_powerUp, 2, 0);
+    
     //Vou para a posição correta
     movendo();
     explosao();

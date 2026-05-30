@@ -21,6 +21,7 @@ metodo_retorna_player = function (_player){
     
     if(!instance_exists(obj_player_teleport)){
     
+        _player.play_audio(sfx_ghosting, 1, 0);
         
         //Passando as informações do player para o objeto MOVE PLAYER     
         var _sprite = _player.sprite_index;

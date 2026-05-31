@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"msc_level1",
+  "%Name":"sfx_placa",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -11,21 +11,21 @@
   "compressionQuality":4,
   "ConfigValues":{
     "modo_debug":{
-      "audioGroupId":"{ \"name\":\"audio_group_musicas\", \"path\":\"audiogroups/audio_group_musicas\" }",
+      "audioGroupId":"{ \"name\":\"audio_group_soud_effects\", \"path\":\"audiogroups/audio_group_soud_effects\" }",
     },
   },
   "conversionMode":0,
-  "duration":126.64898,
+  "duration":1.0744671,
   "exportDir":"",
-  "name":"msc_level1",
+  "name":"sfx_placa",
   "parent":{
-    "name":"Musics",
-    "path":"folders/Sounds/Musics.yy",
+    "name":"Sound Effects",
+    "path":"folders/Sounds/Sound Effects.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"msc_level1.ogg",
-  "volume":0.07,
+  "soundFile":"sfx_placa.wav",
+  "volume":1.0,
 }

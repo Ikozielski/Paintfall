@@ -27,7 +27,6 @@ resetarGlobais = function (){
 
 function  tocar_musica (_som){
     
-    show_debug_message("Tentando tocar: " + string(_som));
     
     if(global.musica_atual != _som){
         

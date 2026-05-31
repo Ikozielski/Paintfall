@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sqc_titulo_Events125",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sqc_titulo_Events125",
+  "parent":{
+    "name":"Paintfall",
+    "path":"Paintfall.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

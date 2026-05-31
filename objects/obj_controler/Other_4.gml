@@ -1,5 +1,3 @@
-show_debug_message("ROOM START: " + room_get_name(room));
-
 switch(room)
 {
     case rm_mundo:

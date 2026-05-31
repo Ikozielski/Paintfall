@@ -1,3 +1,6 @@
+Desenvolvimento Base do Projeto: NoneClass
+https://www.youtube.com/@noneclass
+
 Arte Portal: https://f1xtach.itch.io/pixel-art-portal
 
 Artes criadas por Renato "Renzaky"
@@ -9,3 +12,19 @@ https://www.artstation.com/renzakidev
 https://renato543.itch.io/
 
 Scribble: https://www.jujuadams.com/Scribble/#/latest/
+
+Fonte:
+https://www.dafont.com/pt/paint-drops.font
+
+Efeitos Sonoros:
+Obtidos através do Pixabay.
+https://pixabay.com/sound-effects/
+
+Agradecimento aos criadores que disponibilizaram os efeitos gratuitamente.
+
+
+Músicas:
+Trilhas sonoras de Grand Chase.
+
+Todos os direitos sobre as músicas pertencem aos seus respectivos proprietários e detentores de direitos autorais.
+As músicas foram utilizadas apenas para fins de estudo, desenvolvimento e demonstração deste projeto.

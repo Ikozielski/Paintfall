@@ -1,6 +1,11 @@
 {
   "$GMWindowsOptions":"v2",
   "%Name":"Windows",
+  "ConfigValues":{
+    "modo_debug":{
+      "option_windows_company_info":"Iury Kozielski",
+    },
+  },
   "name":"Windows",
   "option_windows_allow_fullscreen_switching":false,
   "option_windows_borderless":false,

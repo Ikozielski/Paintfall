@@ -8,6 +8,10 @@ if(mouse_check_button_pressed(mb_left))
         file_delete(_arquivo);
         
         global.save_excluido = true;
+        global.tutorialConcluido = false;
+        global.level_1_concluido = false;
+        global.level_2_concluido = false;
+        global.level_3_concluido = false;
         
         alarm[0] = FPS;
         

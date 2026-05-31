@@ -91,9 +91,10 @@ Músicas
          Efeito Ghosting  - OK2
          Porta abrindo - OK2
          Pegar Chave - OK2
-         Entrar na tinta
-         Se mover na tinta
-         Sair da tinta
+         Entrar na tinta - OK2
+         Se mover na tinta - OK2
+         Sair da tinta - OK2
+         Lê a placa - OK2
         
         Acho irritante mas sem parece pior:
             Passos
@@ -121,7 +122,7 @@ Fazer os leveis 2 e 3 do jogo (Cada um com 3 fases) - OK
         3: Tudo  - OK
     
 Melhorar a Tela dos Saves (Tela 01)
-    Colocar uma animação para o nome do jogo (PaintFall)
+    Colocar uma animação para o nome do jogo (PaintFall) - OK
     Colocar uma lixeira pra poder deletar o save - OK
         Com pop-up pra confirmar  - OK 
     Informar o jogador que o save foi excluído - OK 
@@ -157,7 +158,7 @@ TELAR 2 AMIGOS JOGANDO PRA VER AS REAÇÕES E APONTAR ERROS - Ser Crítico mesmo
 ------
 
 
-
+Terminei uma semana atrasado, mas consegui fazer a maioria das coisas que eu queria - 31/05/2026
 
 
 

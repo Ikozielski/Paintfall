@@ -4,6 +4,8 @@ desenha_texto = false;
 
 me_destruir = false;
 
+jaTocou = false;
+
 image_alpha = 0;
 image_xscale = .1;
 image_yscale = .1;
@@ -20,6 +22,12 @@ typist.in(1, 5);
 //Meu metodo de iniciar 
 
 iniciando = function (){
+    
+    if(!jaTocou){
+        obj_player.play_audio(sfx_placa,1,0);
+        jaTocou = true;
+    }
+    
     image_xscale = lerp(image_xscale, 2.5, .1);
     image_yscale = lerp(image_yscale, 1.1, .1);
     image_alpha = lerp(image_alpha, .8, .1);

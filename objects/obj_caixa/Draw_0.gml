@@ -1,3 +1,3 @@
 draw_self();
 
-draw_text(x, y, chao);
+//draw_text(x, y, chao);

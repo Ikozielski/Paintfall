@@ -46,7 +46,30 @@ function carregar_save_jogo (){
     //Carregando as informações do jogo 
     var _buff = buffer_load(string("save{0}.json", global.saveAtual));
     
-    if(_buff == -1) return;
+    //if(_buff == -1) return;
+    
+    //Verificando se ja existe um arquivo salvo, se não, vai criar um novo jogo
+    var _arquivo = string("save{0}.json", global.saveAtual);
+    
+     if (!file_exists(_arquivo)) {
+
+        // Novo jogo
+        global.powerUp_tinta = false;
+        global.powerUp_correr = false;
+     
+        global.faseAtual = 0;
+     
+        global.tutorialConcluido = false;
+        global.level_1_concluido = false;
+        global.level_2_concluido = false;
+        global.level_3_concluido = false;
+     
+        global.player_x = 72;
+        global.player_y = 96;
+        global.roomAtual = rm_mundo;
+
+        return;
+    }
         
     //(Se consegui carregar o arquivo):
     //Converter o Arquivo para texto

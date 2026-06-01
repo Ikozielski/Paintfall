@@ -24,4 +24,4 @@ Shift: Correr
 2. Extraia os arquivos
 3. Execute `PaintFall.exe`
 
-Obrigado por jogar!
+## Obrigado por jogar!

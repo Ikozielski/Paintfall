@@ -16,7 +16,7 @@ Espaço: Entrar e sair da tinta
 
 Shift: Correr
 
-👉 **[Baixar PaintFall](https://github.com/Ikozielski/Paintfall/releases/tag/game)**
+👉 **[Baixar PaintFall](https://ytb-iurykzk.itch.io/paintfall)**
 
 ## Como instalar
 

@@ -16,4 +16,12 @@ Espaço: Entrar e sair da tinta
 
 Shift: Correr
 
+👉 **[Baixar PaintFall](https://github.com/Ikozielski/Paintfall/releases/tag/game)**
+
+## Como instalar
+
+1. Baixe o arquivo PaintFall.zip
+2. Extraia os arquivos
+3. Execute `PaintFall.exe`
+
 Obrigado por jogar!

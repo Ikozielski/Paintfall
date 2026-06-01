@@ -1,6 +1,6 @@
 ## **PaintFall**
 
-## PaintFall é um jogo de puzzle e plataforma 2D em que você controla um personagem capaz de entrar e se mover por dentro da tinta. Utilize essa habilidade para explorar cenários, superar obstáculos e resolver desafios ao longo das fases.
+PaintFall é um jogo de puzzle e plataforma 2D em que você controla um personagem capaz de entrar e se mover por dentro da tinta. Utilize essa habilidade para explorar cenários, superar obstáculos e resolver desafios ao longo das fases.
 
 Este projeto foi desenvolvido por mim utilizando GameMaker. Os assets visuais e músicas utilizados são de terceiros e seus respectivos autores estão devidamente creditados no arquivo Créditos.txt.
 

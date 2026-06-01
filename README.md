@@ -6,10 +6,13 @@ Este projeto foi desenvolvido por mim utilizando GameMaker. Os assets visuais e 
 
 Embora o desenvolvimento tenha se estendido por cerca de dois meses, o projeto acumulou aproximadamente 7 dias de trabalho efetivo, considerando apenas o tempo dedicado à programação, criação das fases e implementação das mecânicas.
 
-Controles
+Controles:
 Setas esquerda e direita: Movimentação
+
 Seta para cima: Pular
+
 Espaço: Entrar e sair da tinta
+
 Shift: Correr
 
 Obrigado por jogar!
